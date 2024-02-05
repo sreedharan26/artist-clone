@@ -1,0 +1,277 @@
+.q-container{
+    display: flex;
+    flex-direction: row;
+    height: 18.2rem;
+    max-height: fit-content;
+}
+
+.left-div{
+    /* width: 48rem; */
+    /* height: 18rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    gap: 1rem;
+    flex: 1;
+}
+
+.image{
+    height: 77%;
+    width: 75%;
+    transform: rotate(10.86deg) translateY(.9rem);
+    background: url('../assets/image.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+    border-radius: 80%;
+    position: relative;
+    object-fit: cover;
+    
+}
+
+.image1{
+    max-width: 75%;
+    max-height: 70%;
+    object-fit: cover;
+    /* max-height: 70%; */
+    margin: 0;
+    /* border-radius: 100%; */
+
+}
+
+.btn{
+    width: 75%;
+    font-size: 1.3rem;
+    background-color: #8F00FF;
+    color: white;
+    font-family: sans-serif;
+    border-radius: 5px;
+    padding: .3rem;
+    margin-top: 1rem;
+    /* line-height: 1rem; */
+    cursor: pointer;
+}
+
+
+.image-wrapper{
+    /* clip-path: ellipse(50% 50%); */
+    position: relative;
+    /* top: 5px;
+    left: 5px; */
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: black;
+    /* transform: rotate(10deg); */
+    border-radius: 95%;
+}
+
+.image-wrapper1{
+    clip-path: ellipse(50% 50%);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: black;
+    transform: rotate(10deg);
+    border-radius: 95%;
+}
+
+
+
+
+.right-div{
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    box-sizing: border-box;
+    justify-content: baseline;
+    flex: 1;
+}
+
+.q-heading{
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: #131630;
+    font-weight: 300;
+}
+
+.quote{
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #476576;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    /* width: 20rem; */
+    /* height: 50%; */
+}
+
+.big-quote{
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+}
+
+.quote::before{
+    content: open-quote;
+    position: absolute;
+    top: -1rem;
+    /* left: 0; */
+    color: #CE90FF;
+    font-size: 3.5rem;
+
+    /* margin: 1rem; */
+}
+
+.name{
+    font-size: 1.4rem;
+    /* margin: 0; */
+    padding: 0;
+    color: #131630;
+    line-height: 0.5rem;
+}
+
+.description{
+    margin: 0;
+    padding: 0;
+    margin-bottom: .5rem;
+    font-size: 1.3rem;
+    color: #131630;
+    font-weight: 200;
+}
+
+
+@media (width > 1440px){
+
+}
+
+@media (1000px < width < 1440px){
+    .q-container{
+        height: 22rem;
+    }
+    .image{
+
+    }
+    .btn{
+
+    }
+    .q-heading{
+
+        /* height: 25rem; */
+    }
+    .quote{
+
+    }
+    .name{
+
+    }
+    .description{
+
+    }
+
+}
+
+@media (800px < width < 1000px){
+    .left-div{
+        width: 50%;
+    }
+    .image{
+        max-width: 60%;
+        /* max-height: 60%; */
+    }
+    .q-container{
+        height: 22rem;
+    }
+
+}
+
+@media (500px< width < 800px){
+    .btn{
+        width: 85%;
+    font-size: 1.3rem;
+    padding: .5rem .2rem;
+    line-height: 1rem;
+    }
+
+    .q-container{
+        height: 22rem;
+    }
+
+}
+
+@media (width < 500px){
+    .q-container{
+        height: 20rem;
+    }
+    .big-quote{
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+    .name{
+        font-size: 1.2rem;
+        margin-top: 0.7rem;
+        line-height: .2rem;
+    }
+    .q-heading{
+        font-size: 1.2rem;
+    }
+    .quote{
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .quote::before{
+        font-size: 3.2rem;
+    }
+    .description{
+        font-size: 1.1rem;
+    }
+    .btn{
+        font-size: 1.2rem;
+    }
+}
+
+@media (orientation : landscape ) {
+    .image{
+        max-height: 75%;
+        max-width: 70%;
+    }
+    /* .btn{
+        margin: 0;
+        font-size: 1rem;
+        width: 79%;
+        padding: .5rem;
+        margin-top: .7rem;
+    } */
+    .left-div{
+        justify-content: flex-start;
+    }
+    /* .q-heading{
+        font-size: 1.3rem;
+    }
+    .quote{
+        margin-bottom: 0rem;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+    }
+    .name{
+        line-height: .7rem;
+        font-size: 1.2rem;
+    } */
+    /* .q-container{
+        justify-content: center;
+        height: 17rem;
+    } */
+    /* .description{
+        font-size: 1.1rem;
+    } */
+}
+
+
