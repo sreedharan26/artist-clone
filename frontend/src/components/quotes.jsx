@@ -10,7 +10,7 @@ export default function Quotes(){
 
     const fetchData = async () => {
         try{
-            const res = await axios.get('http://localhost:3000/data')
+            const res = await axios.get('https://artist-rituals.onrender.com/data')
             // return res.data;
             setDataArray(res.data)
             // const index = Math.floor(Math.random() * res.data.length)
