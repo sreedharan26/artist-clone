@@ -21,8 +21,10 @@ export default function Prompt(){
                     <img src={image} className='p-image' />
                 </div>  
                 <div className="last-container">
-                    <input className="prompt-input"/>
-                    <img className='edit-icon' src={vector} />
+                    <div className='input-wrapper'>
+                        <input className="prompt-input"/>
+                        <img className='edit-icon' src={vector} />
+                    </div>
                     <button className='evoke-btn'>Evoke</button>
                 </div>
             </div>

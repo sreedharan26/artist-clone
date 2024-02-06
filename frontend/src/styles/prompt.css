@@ -69,23 +69,33 @@
     position: relative;
 }
 
-.prompt-input{
-    border: 1px solid #b8b8b8;
-    /* margin-top: .8rem; */
-    font-size: 1.5rem;
-    width: 75%;
+.input-wrapper{
+    flex: auto;
+    flex: 1;
+    display: flex;
+    align-items: center;
     border-radius: .3rem;
-    flex: .78;
-    padding-right: 2.4rem;
+    border: 1px solid #b8b8b8;
+    position: relative;
+    margin-right: .7rem;
+    padding: .1rem 0;
+}
+
+.prompt-input{
+    border: none;
+    font-size: 1.5rem;
+    border-radius: .3rem;
+    flex: 1;
+    padding-right: 1.9rem;
     padding-top: .3rem;
     padding-bottom: .3rem;
+
 }
 
 .edit-icon{
     position: absolute;
-    /* margin-left: -2.5rem; */
-    /* display: block; */
-    right: 8.73rem;
+    margin-right: .3rem;
+    right: 0;
 }
 
 .evoke-btn{
