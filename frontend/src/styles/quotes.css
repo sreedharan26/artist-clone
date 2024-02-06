@@ -1,7 +1,7 @@
 .q-container{
     display: flex;
     flex-direction: row;
-    height: 18.2rem;
+    height: auto;
     max-height: fit-content;
 }
 
@@ -155,7 +155,8 @@
 
 @media (1000px < width < 1440px){
     .q-container{
-        height: 22rem;
+        /* height: 22rem; */
+        height: auto;
     }
     .image{
 
@@ -188,7 +189,8 @@
         /* max-height: 60%; */
     }
     .q-container{
-        height: 22rem;
+        /* height: 22rem; */
+        height: auto;
     }
 
 }
@@ -202,39 +204,41 @@
     }
 
     .q-container{
-        height: 22rem;
+        /* height: 22rem; */
+        height: auto;
     }
 
 }
 
 @media (width < 500px){
     .q-container{
-        height: 20rem;
+        /* height: 20rem; */
+        height: auto;
     }
     .big-quote{
-        font-size: 1.2rem;
-        line-height: 1.5rem;
+        font-size: 1.15rem;
+        line-height: 1.3rem;
     }
     .name{
-        font-size: 1.2rem;
-        margin-top: 0.7rem;
-        line-height: .2rem;
+        font-size: 1.15rem;
+        margin-top: 0.2rem;
+        line-height: 1.4rem;
     }
     .q-heading{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .quote{
-        font-size: 1.5rem;
-        line-height: 2rem;
+        font-size: 1.3rem;
+        line-height: 1.54rem;
     }
     .quote::before{
-        font-size: 3.2rem;
+        font-size: 3rem;
     }
     .description{
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     .btn{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 }
 
