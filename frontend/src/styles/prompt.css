@@ -1,3 +1,7 @@
+.p-container{
+    height: auto;
+}
+
 .p-heading{
     font-size: 1.3rem;
     text-transform: uppercase;
@@ -94,6 +98,13 @@
     padding: .3rem .3rem ;
 }
 
+@media (orientation: landscape){
+    .image-container{
+        /* max-height: 30rem;
+        min-height: 20rem; */
+        height: auto;
+    }
+}
 
 
 
@@ -109,7 +120,8 @@
 
 @media (height < 850px) {
     .image-container{
-        height: 16rem;
+        /* height: 16rem; */
+        height: auto;
         margin-top: 1rem;
     }
 }
@@ -135,7 +147,8 @@
         background-color: black;
     } */
     .image-container{
-        height: 10rem;
+        /* height: 10rem; */
+        height: auto;
     }
 }
 

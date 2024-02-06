@@ -1,6 +1,6 @@
 .card{
     width: 100%;
-    height: 100%;
+    height: auto;
     font-size: 2.4rem;
     box-sizing: border-box;
     margin-bottom: .7rem;
@@ -40,14 +40,14 @@
 @media (1000px< width <1440px) {
     .content{
         width: 39vw;
-        max-height: 45vh;
+        /* max-height: 45vh; */
     }
 }
 
 @media (800px< width < 1000px){
     .content{
         width: 75vw;
-        max-height: 35vh;
+        /* max-height: 35vh; */
     }
 }
 
@@ -57,14 +57,14 @@
     }
     .content{
         width: 75vw;
-
+        height: auto;
     }
     
   }
   
 @media (orientation : landscape){
     .content{
-        max-height: 50vh;
+        max-height: 100vh;
         max-width: 50vw;
     }
 }
