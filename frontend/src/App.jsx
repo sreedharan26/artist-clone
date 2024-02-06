@@ -8,6 +8,8 @@ import Card from './components/card'
 import Quotes from './components/quotes'
 import Doodle from './components/doodle_dash'
 import Prompt from './components/prompt'
+import star from './assets/star.png'
+import DailyRituals from './components/daily_rituals'
 
 function App() {
 
@@ -21,7 +23,9 @@ function App() {
                   // data={dataArray !== null ? dataArray : null}   
               />
           </Card>
-          <Card />
+          <Card>
+            <DailyRituals />
+          </Card>
         </div>
         <div className="right-side">
           <Card>
@@ -32,6 +36,18 @@ function App() {
           </Card>
         </div>
       </div>
+      <div className="bottom-star">
+                    <img src={star} />
+                    <img src={star} />
+                    <img src={star} />
+                    <img src={star} />
+                    <img src={star} />
+                    <img src={star} />
+                    <img src={star} />
+                    <img src={star} />
+                    <img src={star} />
+                    <img src={star} />
+        </div>
     </>
   )
 }

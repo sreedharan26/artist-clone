@@ -1,0 +1,55 @@
+.dr-container{
+    aspect-ratio: 3.8;   
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 1rem .7rem;
+    gap: 1rem;
+}
+
+.left-dr-cont{
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
+    aspect-ratio: 7;
+    /* flex: .65; */
+    /* background-color: aqua; */
+}
+
+.dr-heading{
+    font-size: 2rem;
+    letter-spacing: 1.7px;
+    color: #476576;
+    margin: 0;
+    padding: 0;
+}
+
+.dr-p{
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    margin: 1rem 0;
+    padding: 0;
+
+}
+
+.dr-btn{
+    aspect-ratio: 6.1;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    line-height: 28px;
+    background-color: #8F00FF;
+    border-radius: 10px;
+    color: #FFFFFF;
+    border: none;
+    padding: .4rem .7rem;
+}
+
+.right-dr-cont{
+    /* aspect-ratio: 1.7; */
+    background-color: aliceblue;
+    flex: 1fr;
+}
+
+.right-dr-cont p{
+    font-size: 1rem;
+}

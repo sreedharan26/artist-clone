@@ -1,5 +1,5 @@
 import "../styles/quotes.css"
-import image from "../assets/image.png"
+import image from "../assets/image3.png"
 import axios from 'axios'
 import { useEffect, useState } from "react"
 
@@ -34,7 +34,7 @@ export default function Quotes(){
       }, [])
 
     const handleClick = () => {
-        const i = data !== null && data.length > 0 ? Math.floor(Math.random() * data.length) : 0;
+        const i = data !== null && data.length > 0 ? (index+1)%data.length : 0;
         console.log(i, data[i].quote.length)
         if(data[i].quote.length > 40){
             setIsBig(true)
@@ -48,18 +48,14 @@ export default function Quotes(){
         <>
             <div className="q-container">
                 <div className="left-div">
-                    <div className="image">
+                    <div className="q-i-cont">
+                        <div className="img-cont">
+                            <img className="q-image" src={image} />
+                        </div>
+                        <div className="q-i-wrapper">
 
-                        {/* <div className="image-wrapper">
-                            <div className="image-wrapper1">
-
-                            </div>
-                        </div> */}
+                        </div>
                     </div>
-                    {/* <img 
-                        src={image}
-                        className="image1"
-                    /> */}
                     <button className="btn" onClick={handleClick}>Shuffle</button>
                 </div>
                 <div className="right-div">
@@ -76,3 +72,15 @@ export default function Quotes(){
         </>
     )
 }
+                    // <div className="image">
+
+                    //     {/* <div className="image-wrapper">
+                    //         <div className="image-wrapper1">
+
+                    //         </div>
+                    //     </div> */}
+                    // </div>
+                    // {/* <img 
+                    //     src={image}
+                    //     className="image1"
+                    // /> */}

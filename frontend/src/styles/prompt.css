@@ -1,11 +1,13 @@
 .p-container{
     height: auto;
+    aspect-ratio: 1.5;
 }
 
 .p-heading{
     font-size: 1.3rem;
     text-transform: uppercase;
     margin-bottom: 1rem;
+    letter-spacing: 1.5px;
 }
 
 .prompt-shuffle-container{
@@ -21,9 +23,10 @@
     flex: 1;
     justify-content: center;
     background-color: #A111C5;
-    padding: .5rem 0;
+    padding: .8rem 0;
     margin-right: 1.3rem;
     border-radius: .65rem;
+    letter-spacing: 1.5px;
 }
 
 .button{
@@ -32,6 +35,9 @@
     color: #FFFFFF;
     font-size: 1.3rem;
     border-radius: .65rem;
+    letter-spacing: 3px;
+    border: none;
+    padding: .8rem 2.5rem;
 }
 
 .image-container{
@@ -49,6 +55,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    aspect-ratio: 1.95;
 }
 
 .p-image{
@@ -89,7 +96,8 @@
     padding-right: 1.9rem;
     padding-top: .3rem;
     padding-bottom: .3rem;
-
+    padding-left: .8rem;
+    letter-spacing: 1.3px;
 }
 
 .edit-icon{
@@ -103,9 +111,12 @@
     background-color: #8F00FF;
     color: #FFFFFF;
     font-size: 1.3rem;
+    letter-spacing: 2px;
     font-weight: 100;
     border-radius: .45rem;
     padding: .3rem .3rem ;
+    border: none;
+    padding: .5rem 2.1rem;
 }
 
 @media (orientation: landscape){
@@ -123,7 +134,7 @@
         background-color: aliceblue;
     } */
     .image-container{
-        height: 14rem;
+        /* height: 14rem; */
     }
 
 }
@@ -138,7 +149,7 @@
 
 @media (height < 800px) {
     .image-container{
-        height: 14rem;
+        /* height: 14rem; */
     }
 }
 
@@ -148,7 +159,7 @@
     } */
 
     .image-container{
-        height: 15rem;
+        /* height: 15rem; */
     }
 }
 
@@ -167,7 +178,7 @@
         background-color: greenyellow;
     } */
     .image-container{
-        height: 11rem;
+        /* height: 11rem; */
         /* margin-bottom: .5rem; */
     }
     .prompt{

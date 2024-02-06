@@ -22,7 +22,10 @@ export default function Prompt(){
                 </div>  
                 <div className="last-container">
                     <div className='input-wrapper'>
-                        <input className="prompt-input"/>
+                        <input 
+                            className="prompt-input"
+                            placeholder='Lost in Time'
+                        />
                         <img className='edit-icon' src={vector} />
                     </div>
                     <button className='evoke-btn'>Evoke</button>
