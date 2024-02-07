@@ -36,18 +36,20 @@ function App() {
           </Card>
         </div>
       </div>
-      <div className="bottom-star">
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
+      <footer>
+        <div className="bottom-star">
+                      <img src={star} />
+                      <img src={star} />
+                      <img src={star} />
+                      <img src={star} />
+                      <img src={star} />
+                      <img src={star} />
+                      <img src={star} />
+                      <img src={star} />
+                      <img src={star} />
+                      <img src={star} />
         </div>
+      </footer>
     </>
   )
 }

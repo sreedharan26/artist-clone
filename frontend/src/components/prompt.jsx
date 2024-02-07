@@ -1,8 +1,15 @@
 import '../styles/prompt.css'
 import image from '../assets/image2.jpeg'
 import vector from '../assets/Vector.png'
+import { useRef } from 'react'
 
 export default function Prompt(){
+    const inputRef = useRef()
+
+    function focus(){
+        inputRef.current.focus()
+    }
+
     return (
         <>
             <div className="p-container">
@@ -25,8 +32,9 @@ export default function Prompt(){
                         <input 
                             className="prompt-input"
                             placeholder='Lost in Time'
+                            ref={inputRef}
                         />
-                        <img className='edit-icon' src={vector} />
+                        <img className='edit-icon' src={vector} onClick={focus} />
                     </div>
                     <button className='evoke-btn'>Evoke</button>
                 </div>

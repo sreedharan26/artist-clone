@@ -38,6 +38,7 @@
     letter-spacing: 3px;
     border: none;
     padding: .8rem 2.5rem;
+    cursor: pointer;
 }
 
 .image-container{
@@ -81,7 +82,7 @@
     flex: 1;
     display: flex;
     align-items: center;
-    border-radius: .3rem;
+    border-radius: 10px;
     border: 1px solid #b8b8b8;
     position: relative;
     margin-right: .7rem;
@@ -91,9 +92,9 @@
 .prompt-input{
     border: none;
     font-size: 1.5rem;
-    border-radius: .3rem;
+    border-radius: 10px;
     flex: 1;
-    padding-right: 1.9rem;
+    padding-right: 2.5rem;
     padding-top: .3rem;
     padding-bottom: .3rem;
     padding-left: .8rem;
@@ -102,8 +103,9 @@
 
 .edit-icon{
     position: absolute;
-    margin-right: .3rem;
+    margin-right: .7rem;
     right: 0;
+    cursor: pointer;
 }
 
 .evoke-btn{
@@ -117,6 +119,7 @@
     padding: .3rem .3rem ;
     border: none;
     padding: .5rem 2.1rem;
+    cursor: pointer;
 }
 
 @media (orientation: landscape){

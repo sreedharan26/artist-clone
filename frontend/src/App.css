@@ -12,6 +12,8 @@ body{
   box-sizing: border-box;
   /* aspect-ratio: 1.23; */
   position: relative;
+  /* display: flex; */
+  /* flex-direction: column; */
 }
 
 .header{
@@ -29,6 +31,7 @@ body{
 
 .star img{
   margin-right: -15px;
+  padding: 0;
 }
 
 
@@ -85,13 +88,20 @@ body{
 }
 
 .bottom-star{
-  position: absolute;
-  left: 1.5rem;
-  bottom: 1rem;
+  /* position: absolute; */
+  /* left: 1.5rem; */
+  /* left: 1rem; */
 }
 
 .bottom-star img{
   margin-right: -15px;
+  padding: 0;
+}
+
+footer{
+  position: sticky;
+  bottom: 2rem;
+  margin-left: 2rem;
 }
 
 
