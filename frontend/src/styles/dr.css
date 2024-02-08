@@ -1,3 +1,24 @@
+@font-face {
+    font-family: 'GT America Mono Bold'; 
+    src: url('../FONT_GT_America_mono/GT-America-Mono-Bold.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: 'GT America Mono Medium'; 
+    src: url('../FONT_GT_America_mono/GT-America-Mono-Medium.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: 'GT America Mono Regular'; 
+    src: url('../FONT_GT_America_mono/GT-America-Mono-Regular.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: 'GT America Mono Thin'; 
+    src: url('../FONT_GT_America_mono/GT-America-Mono-Thin.otf') format('opentype'); 
+}
+
+
 .dr-container{
     aspect-ratio: 3.8;   
     display: flex;
@@ -19,30 +40,33 @@
 
 .dr-heading{
     font-size: 2rem;
-    letter-spacing: 1.7px;
+    letter-spacing: .5px;
     color: #476576;
     margin: 0;
     padding: 0;
+    font-family: 'GT America Mono Bold', sans-serif;
 }
 
 .dr-p{
     font-size: 1.2rem;
-    letter-spacing: 1.5px;
+    letter-spacing: .5px;
     margin: 1rem 0;
     padding: 0;
+    font-family: 'GT America Mono Thin', sans-serif;
 
 }
 
 .dr-btn{
     aspect-ratio: 6.1;
     font-size: 1.3rem;
-    letter-spacing: 3px;
+    /* letter-spacing: 3px; */
     line-height: 28px;
     background-color: #8F00FF;
     border-radius: 10px;
     color: #FFFFFF;
     border: none;
     padding: .4rem .7rem;
+    font-family: 'GT America Mono Thin', sans-serif;
 }
 
 .right-dr-cont{

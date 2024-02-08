@@ -1,3 +1,24 @@
+@font-face {
+    font-family: 'GT America Mono Bold'; 
+    src: url('../FONT_GT_America_mono/GT-America-Mono-Bold.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: 'GT America Mono Medium'; 
+    src: url('../FONT_GT_America_mono/GT-America-Mono-Medium.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: 'GT America Mono Regular'; 
+    src: url('../FONT_GT_America_mono/GT-America-Mono-Regular.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: 'GT America Mono Thin'; 
+    src: url('../FONT_GT_America_mono/GT-America-Mono-Thin.otf') format('opentype'); 
+}
+
+
 .d-container{
     display: flex;
     flex-direction: column;
@@ -11,23 +32,27 @@
     margin-bottom: 0;
     color: #131630;
     font-weight: 200;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
+    font-family: 'GT America Mono Thin', sans-serif;
+
 }
 
 .doodle{
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     color: #476576;
-    letter-spacing: 1.5px;
+    letter-spacing: .5px;
+    font-family: 'GT America Mono Bold', sans-serif;
 }
 
 .doo-description{
     color: #131630;
-    letter-spacing: 1.5px;
-    font-size: 1.5rem;
+    /* letter-spacing: 1.5px; */
+    font-size: 1.3rem;
     padding: 0;
     margin: 0;
+    font-family: 'GT America Mono Thin', sans-serif;
 }
 
 @media (width < 500px){

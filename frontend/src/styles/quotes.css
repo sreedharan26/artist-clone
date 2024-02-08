@@ -1,3 +1,25 @@
+@font-face {
+    font-family: 'GT America Mono Bold'; 
+    src: url('../FONT_GT_America_mono/GT-America-Mono-Bold.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: 'GT America Mono Medium'; 
+    src: url('../FONT_GT_America_mono/GT-America-Mono-Medium.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: 'GT America Mono Regular'; 
+    src: url('../FONT_GT_America_mono/GT-America-Mono-Regular.otf') format('opentype'); 
+}
+
+@font-face {
+    font-family: 'GT America Mono Thin'; 
+    src: url('../FONT_GT_America_mono/GT-America-Mono-Thin.otf') format('opentype'); 
+}
+
+
+
 .q-container{
     display: flex;
     flex-direction: row;
@@ -69,7 +91,8 @@
     font-size: 1.3rem;
     background-color: #8F00FF;
     color: white;
-    font-family: sans-serif;
+    font-family: 'GT America Mono Thin', sans-serif;
+    font-weight: 200;
     border-radius: 10px;
     padding: .3rem;
     margin-top: 1rem;
@@ -77,7 +100,7 @@
     cursor: pointer;
     border: none;
     aspect-ratio: 4;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
 }
 
 
@@ -100,6 +123,7 @@
     color: #131630;
     font-weight: 300;
     letter-spacing: 1.5px;
+    font-family: 'GT America Mono Thin', sans-serif;
 }
 
 .quote{
@@ -112,6 +136,7 @@
     /* width: 20rem; */
     /* height: 50%; */
     letter-spacing: 2px;
+    font-family: 'GT America Mono Bold', sans-serif;
 }
 
 .big-quote{
@@ -138,7 +163,8 @@
     padding: 0;
     color: #131630;
     line-height: 0.5rem;
-    letter-spacing: 1px;
+
+    font-family: 'GT America Mono Medium', sans-serif;
 }
 
 .description{
@@ -148,7 +174,8 @@
     font-size: 1.3rem;
     color: #131630;
     font-weight: 200;
-    letter-spacing: 1.3px;
+    /* letter-spacing: 1.3px; */
+    font-family: 'GT America Mono Thin', sans-serif;
 }
 
 
