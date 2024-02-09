@@ -51,7 +51,7 @@ export default function Quotes(){
                 <div className="left-div">
                     <div className="q-i-cont">
                         <div className="img-cont">
-                            <img className="q-image" src={data !== null ? data[index].image[0].thumbnails.large.url : image} />
+                            <img className="q-image" src={data !== null ? data[index].image[0].thumbnails.large.url : ""} />
                         </div>
                         {/* <div className="q-i-wrapper">
 
@@ -64,7 +64,7 @@ export default function Quotes(){
                     {/* <span className="open-quote">“</span> */}
                     <img src={quote} className="quote-image"/>
                     <h1 className={`quote ${isBig === true ? "big-quote" : '' }`}>
-                        {data && data[index] ? data[index].quote  : 'Originality is undetected plagiarism'}
+                        {data && data[index] ? data[index].quote  : ''}
                         {/* {data && data[index] && data[index].quote.length > 40 ? () => setIsBig(true) : () => setIsBig(false)} */}
                     </h1>
                     <p className="name"><b>{data && data[index] ? data[index].name : 'Author'}</b></p>

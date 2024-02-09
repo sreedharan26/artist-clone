@@ -28,7 +28,8 @@
     /* max-height: fit-content; */
     /* min-height: 35vh; */
     aspect-ratio: 1.62;
-    margin: 1rem;
+    margin: .5rem;
+    gap: 1rem;
 }
 
 .left-div{
@@ -37,9 +38,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     position: relative;
-    /* gap: 1rem; */
+    gap: 2rem;
     /* flex: 1; */
     aspect-ratio: 0.58;
     margin-top: 1.5rem;
@@ -66,7 +67,7 @@
 
 .img-cont img{
     /* aspect-ratio: .26; */
-    width: 90%;
+    width: 105%;
     /* height: 200px; */
     /* width: 200px; */
     object-fit: contain;
@@ -151,6 +152,10 @@
     letter-spacing: 2px;
     font-family: 'GT America Mono Bold', sans-serif;
     overflow: scroll;
+}
+
+.quote::-webkit-scrollbar{
+    display: none;
 }
 
 /* .big-quote{

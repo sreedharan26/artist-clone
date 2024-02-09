@@ -46,8 +46,8 @@ export default function Doodle(){
                     <p className="heading">Creative Catalysts</p>
                     <button className="d-btn" onClick={handleClick}>Shuffle</button>
                 </div>
-                <h1 className="doodle">{data!==null ? data[index].heading : 'Doodle Dash'}</h1>
-                <p className="doo-description">{data !== null ? data[index].idea : 'Set a timer for five minutes and let your hand doodle freely on a blank page. No rules, just quick, uninhibited strokes.'}</p>
+                <h1 className="doodle">{data!==null ? data[index].heading : ''}</h1>
+                <p className="doo-description">{data !== null ? data[index].idea : ''}</p>
             </div>
         </>
     )
