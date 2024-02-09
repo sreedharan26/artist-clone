@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio&family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio&family=Big+Shoulders+Display:wght@500&family=Oswald&display=swap');
 
 #root {
   width: 100vw;
@@ -20,16 +22,19 @@ body{
   font-size: 4rem;
   height: 70px;
   padding: 0.7rem;
-  font-family: 'Bebas Neue', sans-serif;
-  /* display: flex; */
-  /* align-items: flex-end; */
-  /* aspect-ratio: ; */
+  /* font-family: 'Oswald', sans-serif; */
+  font-family: 'Antonio', sans-serif;
+  /* font-family: 'Big Shoulders Display', sans-serif; */
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-right: 2rem;
+  text-transform: capitalize;
+  margin: 0 .8rem ;
 }
 
 .star img{
+  margin: 1rem 0;
   margin-right: -15px;
   padding: 0;
 }
@@ -101,7 +106,8 @@ body{
 footer{
   /* position: sticky; */
   /* bottom: 2rem; */
-  margin-left: 2rem;
+    margin-left: 4rem;
+    margin-top: -4rem;
 }
 
 

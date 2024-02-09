@@ -23,11 +23,34 @@
     display: flex;
     flex-direction: column;
     /* width: 80%; */
-    aspect-ratio: 2.55;
+    aspect-ratio: 3.4;
+    margin: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.heading-btn-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0;
+}
+
+.d-btn{
+    width: 25%;
+    font-size: 1.3rem;
+    font-family: 'GT America Mono Thin', sans-serif;
+    border-radius: 10px;
+    background: #8F00FF;
+    padding: .4rem;
+    border: none;
+    color: #FFFFFF;
+    aspect-ratio: 3.5;
+    letter-spacing: 1px;
+    cursor: pointer;
 }
 
 .heading{
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
     margin-bottom: 0;
     color: #131630;
@@ -38,7 +61,7 @@
 }
 
 .doodle{
-    font-size: 2rem;
+    font-size: 2.45rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     color: #476576;
@@ -49,7 +72,7 @@
 .doo-description{
     color: #131630;
     /* letter-spacing: 1.5px; */
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     padding: 0;
     margin: 0;
     font-family: 'GT America Mono Thin', sans-serif;

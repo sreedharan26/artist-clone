@@ -27,12 +27,13 @@
 .p-container{
     height: auto;
     aspect-ratio: 1.5;
+    margin: .7rem;
 }
 
 .p-heading{
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 1.8rem;
     letter-spacing: .5px;
     font-family: 'GT America Mono Thin', sans-serif;
 }
@@ -40,6 +41,7 @@
 .prompt-shuffle-container{
     display: flex;
     /* justify-content: space-between; */
+    margin-bottom: 1.4rem;
 }
 
 .prompt{
@@ -58,7 +60,7 @@
 }
 
 .button{
-    flex: .26;
+    flex: .23;
     background-color: #8F00FF;
     color: #FFFFFF;
     font-size: 1.3rem;
@@ -86,6 +88,7 @@
     justify-content: center;
     align-items: center;
     aspect-ratio: 1.95;
+    margin-bottom: 1rem;
 }
 
 .p-image{
@@ -119,7 +122,7 @@
 
 .prompt-input{
     border: 1px solid #b8b8b8;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     border-radius: 10px;
     flex: 1;
     padding-right: 2.5rem;
@@ -141,13 +144,12 @@
     flex: .19;
     background-color: #8F00FF;
     color: #FFFFFF;
-    font-size: 1.3rem;
-    letter-spacing: 2px;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
     font-weight: 100;
     border-radius: .45rem;
-    padding: .3rem .3rem ;
     border: none;
-    padding: .5rem 2.1rem;
+    padding: .6rem 2.1rem;
     cursor: pointer;
     font-family: 'GT America Mono Thin', sans-serif;
 }
