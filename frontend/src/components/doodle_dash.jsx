@@ -28,9 +28,9 @@ export default function Doodle(){
     }, [])
 
     const handleClick = () => {
-        const i = data !== null && data.length > 0 ? (index+1)%data.length : 0;
+        const i = data !== null && data.length > 0 ? Math.floor(Math.random() * data.length) : 0;
         console.log(i, data[i].idea.length)
-        if(data[i].idea.length > 40){
+        if(data[i].idea.length > 80){
             setIsBig(true)
         }else{
             setIsBig(false);
@@ -47,7 +47,7 @@ export default function Doodle(){
                     <button className="d-btn" onClick={handleClick}>Shuffle</button>
                 </div>
                 <h1 className="doodle">{data!==null ? data[index].heading : ''}</h1>
-                <p className="doo-description">{data !== null ? data[index].idea : ''}</p>
+                <p className={`doo-description ${isBig ? "big-desc" : ''}`}>{data !== null ? data[index].idea : ''}</p>
             </div>
         </>
     )

@@ -61,7 +61,7 @@
     aspect-ratio: 6.1;
     font-size: 1.3rem;
     /* letter-spacing: 3px; */
-    line-height: 28px;
+    /* line-height: 28px; */
     background-color: #8F00FF;
     border-radius: 10px;
     color: #FFFFFF;
@@ -71,11 +71,12 @@
 }
 
 .right-dr-cont{
-    aspect-ratio: 1.7;
+    /* aspect-ratio: 1.7; */
     height: 100%;
     display: flex;
     align-items: center;
-    margin-left: .9rem;
+    justify-content: center;
+    /* margin-left: .9rem; */
     margin-right: .8rem;
 }
 
@@ -158,4 +159,88 @@
 .image4 .dr-i-wrapper{
     transform: rotate(-8deg);
     top: 6px;
+}
+
+@media (width < 500px){
+    .dr-container{
+        aspect-ratio: 2.53;
+        gap: 0rem;
+        padding: 0;
+    }
+    .left-dr-cont{
+        flex: 1fr;
+        margin-right: -.4rem;
+    }
+    .right-dr-cont{
+        flex: .8;
+        margin-right: -2.5rem;
+        /* margin-left: -3rem; */
+    }
+    .dr-heading{
+        font-size: 1.12rem;
+    }
+    .dr-p{
+        font-size: .7rem;
+        margin: .43rem 0;
+    }
+    .dr-btn{
+        font-size: .7rem;
+        aspect-ratio: 8;
+        padding: .38rem;
+        width: 100%;
+        border-radius: 4.5px;
+    }
+    .dr-i-cont{
+        width: 30%;
+    }
+    .dr-img-cont{
+        width: 40%;
+        height: 60%;
+    }
+    .dr-image{
+        width: 60%;
+        height: 70%;
+        margin-left: -1rem;
+    }
+    .dr-i-wrapper{
+        width: 75%;
+        height: 70%;
+        margin-top: 1rem;
+        margin-left: .5rem;
+        top: 2.8px;
+        left: 5px;
+        transform: rotate(11.5deg);
+    }
+
+    .image2{
+        margin-top: .2rem;
+        margin-left: -1.5rem;
+    }
+
+    .image2 .dr-i-wrapper{
+        left: 5px;
+        top: 2px;
+        transform: rotate(-10deg);
+    }
+
+    .image3{
+        margin-left: -1.4rem;
+    }
+
+    .image3 .dr-i-wrapper{
+        height: 70%;
+        top: 2px;
+        left: 5px;
+        transform: rotate(14deg);
+    }
+
+    .image4{
+        margin-left: -1.6rem;
+    }
+
+    .image4 .dr-i-wrapper{
+        left: 4px;
+        top: 1px;
+    }
+
 }

@@ -36,7 +36,7 @@
 }
 
 .d-btn{
-    width: 25%;
+    width: 28%;
     font-size: 1.3rem;
     font-family: 'GT America Mono Thin', sans-serif;
     border-radius: 10px;
@@ -44,7 +44,7 @@
     padding: .4rem;
     border: none;
     color: #FFFFFF;
-    aspect-ratio: 3.5;
+    aspect-ratio: 3.6;
     letter-spacing: 1px;
     cursor: pointer;
 }
@@ -54,7 +54,6 @@
     text-transform: uppercase;
     margin-bottom: 0;
     color: #131630;
-    font-weight: 200;
     letter-spacing: 1px;
     font-family: 'GT America Mono Thin', sans-serif;
 
@@ -72,19 +71,50 @@
 .doo-description{
     color: #131630;
     /* letter-spacing: 1.5px; */
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     padding: 0;
     margin: 0;
     font-family: 'GT America Mono Thin', sans-serif;
 }
 
-@media (width < 500px){
+.big-desc{
+    font-size: 1.2rem;
+}
+
+@media (1000px < width < 1440px){
+    .d-container{
+        margin: .7rem 1.2rem;
+    }
     .heading{
-        font-size: 1rem;
+        font-size: 1.1rem;
+    }
+    .d-btn{
+        font-size: 1.1rem;
     }
     .doodle{
-        font-size: 1.3rem;
-        line-height: 1.5rem;
+        font-size: 1.65rem;
+        line-height: 2rem;
+    }
+    .doo-description{
+        font-size: 1rem;
+    }
+}
+
+@media (width < 500px){
+    .d-container{
+        margin: auto .5rem;
+        aspect-ratio: 2.1;
+    }
+    .heading{
+        font-size: .7rem;
+    }
+    .d-btn{
+        font-size: .7rem;
+        border-radius: 5px;
+    }
+    .doodle{
+        font-size: 1.12rem;
+        line-height: 1.3rem;
     }
     .doo-description{
         font-size: .7rem;

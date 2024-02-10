@@ -55,10 +55,21 @@
         font-size: 1.5rem;
     }
     .content{
-        width: 75vw;
+        width: 80vw;
         height: auto;
     }
     
+  }
+
+  @media (width < 500px){
+    .content{
+        border-radius: 5px;
+        border: .5px solid black;
+    }
+    .back-wrapper{
+        border: none;
+        border-radius: 5px;
+    }
   }
   
 @media (orientation : landscape){

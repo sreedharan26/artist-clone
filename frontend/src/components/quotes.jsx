@@ -7,7 +7,8 @@ import quote from '../assets/qu.svg'
 export default function Quotes(){
     const [data, setDataArray] = useState(null)
     const [index, setIndex] = useState(0);
-    const [isBig, setIsBig] = useState(false);
+    const [isBig, setIsBig] = useState(true);
+    const [large, setLarge] = useState(false);
 
     const fetchData = async () => {
         try{
@@ -32,15 +33,36 @@ export default function Quotes(){
           await fetchData();
         }
         func();
-      }, [])
+        // if(data!==null && data[index] !==null && data[index].quote.length > 60){
+        //     setIsBig(true);
+        // }
+    }, [])
+    
+    useEffect(() => {
+          if(data!==null && data[index] !==null && data[index].quote.length > 60){
+              setIsBig(true);
+              setLarge(false)
+          }else if(data!==null && data[index] !==null && data[index].quote.length > 80){
+                setLarge(true)
+                setIsBig(false);
+          }else{
+            setIsBig(false)
+            setLarge(false)
+          }
+      }, [index])
 
     const handleClick = () => {
-        const i = data !== null && data.length > 0 ? (index+1)%data.length : 0;
+        const i = data !== null && data.length > 0 ? Math.floor(Math.random() * data.length) : 0;
         console.log(i, data[i].quote.length)
-        if(data[i].quote.length > 40){
+        if(data[i].quote.length > 60){
             setIsBig(true)
+            setLarge(false)
+        }else if(data[i].quote.length > 80){
+            setIsBig(false)
+            setLarge(true)
         }else{
             setIsBig(false);
+            setLarge(false);
         }
         setIndex(i);
     }
@@ -51,7 +73,7 @@ export default function Quotes(){
                 <div className="left-div">
                     <div className="q-i-cont">
                         <div className="img-cont">
-                            <img className="q-image" src={data !== null ? data[index].image[0].thumbnails.large.url : ""} />
+                            <img className="q-image" src={data !== null ? data[index].image[0].url : ""} />
                         </div>
                         {/* <div className="q-i-wrapper">
 
@@ -63,9 +85,9 @@ export default function Quotes(){
                     <p className="q-heading">Visionary Voices</p>
                     {/* <span className="open-quote">“</span> */}
                     <img src={quote} className="quote-image"/>
-                    <h1 className={`quote ${isBig === true ? "big-quote" : '' }`}>
+                    <h1 className={`quote ${isBig ? "big-quote" : "" } ${large ? "large-quote" : ''}`}>
                         {data && data[index] ? data[index].quote  : ''}
-                        {/* {data && data[index] && data[index].quote.length > 40 ? () => setIsBig(true) : () => setIsBig(false)} */}
+                        {/* {data && data[index] && data[index].quote.length > 60 ? () => setIsBig(true) : () => setIsBig(false)} */}
                     </h1>
                     <p className="name"><b>{data && data[index] ? data[index].name : 'Author'}</b></p>
                     <p className="description">{data && data[index].desc}</p>

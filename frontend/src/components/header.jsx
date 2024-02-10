@@ -1,10 +1,11 @@
 import star from "../assets/star.png"
+import head from "../assets/ArtistRituals.svg"
 
 export default function Header(){
     return (
         <>
             <div className="header">
-                Artist Rituals
+                <img src={head} className="head-img" /> 
                 <div className="star">
                     <img src={star} />
                     <img src={star} />
