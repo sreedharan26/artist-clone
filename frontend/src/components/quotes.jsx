@@ -9,6 +9,7 @@ export default function Quotes(){
     const [index, setIndex] = useState(0);
     const [isBig, setIsBig] = useState(true);
     const [large, setLarge] = useState(false);
+    const [cname, setCname] = useState('');
 
     const fetchData = async () => {
         try{
@@ -36,6 +37,8 @@ export default function Quotes(){
         // if(data!==null && data[index] !==null && data[index].quote.length > 60){
         //     setIsBig(true);
         // }
+        isBig ? setCname("big-quote") : setCname("") 
+
     }, [])
     
     useEffect(() => {
@@ -53,7 +56,7 @@ export default function Quotes(){
 
     const handleClick = () => {
         const i = data !== null && data.length > 0 ? Math.floor(Math.random() * data.length) : 0;
-        console.log(i, data[i].quote.length)
+        // console.log(i, data[i].quote.length)
         if(data[i].quote.length > 60){
             setIsBig(true)
             setLarge(false)
@@ -85,7 +88,7 @@ export default function Quotes(){
                     <p className="q-heading">Visionary Voices</p>
                     {/* <span className="open-quote">“</span> */}
                     <img src={quote} className="quote-image"/>
-                    <h1 className={`quote ${isBig ? "big-quote" : "" } ${large ? "large-quote" : ''}`}>
+                    <h1 className={`quote ${cname} ${large ? "large-quote" : ''}`}>
                         {data && data[index] ? data[index].quote  : ''}
                         {/* {data && data[index] && data[index].quote.length > 60 ? () => setIsBig(true) : () => setIsBig(false)} */}
                     </h1>

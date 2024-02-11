@@ -45,7 +45,7 @@
 }
 
 .prompt{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #FFFFFF;
     display: flex;
@@ -72,6 +72,9 @@
     cursor: pointer;
     font-family: 'GT America Mono Thin', sans-serif;
 }
+.button:hover{
+    background-color: #420076;
+}
 
 .image-container{
     border-radius: .7rem;
@@ -84,12 +87,13 @@
 }
 
 .p-image{
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
     object-fit: cover;
     border-radius: .7rem;
     margin: 0;
     padding: 0;
+    aspect-ratio: 1.95;
 }
 
 .last-container{
@@ -144,6 +148,9 @@
     padding: .6rem 2.1rem;
     cursor: pointer;
     font-family: 'GT America Mono Thin', sans-serif;
+}
+.evoke-btn:hover{
+    background-color: #420076;
 }
 
 @media (orientation: landscape){
@@ -225,7 +232,7 @@
     }
 }
 
-@media (width < 500px){
+@media (width < 600px){
     .p-container{
         aspect-ratio: 1.4;
         margin: 0;

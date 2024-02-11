@@ -48,6 +48,9 @@
     letter-spacing: 1px;
     cursor: pointer;
 }
+.d-btn:hover{
+    background-color: #420076;
+}
 
 .heading{
     font-size: 1.4rem;
@@ -100,7 +103,7 @@
     }
 }
 
-@media (width < 500px){
+@media (width < 600px){
     .d-container{
         margin: auto .5rem;
         aspect-ratio: 2.1;

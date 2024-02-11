@@ -8,7 +8,7 @@
 }
 
 .content{
-    padding: 1rem;
+    padding: .7rem;
     position: relative;
     background-color: #FEFFBE;
     border: 1px solid black;
@@ -61,13 +61,13 @@
     
   }
 
-  @media (width < 500px){
+  @media (width < 600px){
     .content{
         border-radius: 5px;
         border: .5px solid black;
     }
     .back-wrapper{
-        border: none;
+        border: .5px solid black;
         border-radius: 5px;
     }
   }

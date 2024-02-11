@@ -28,13 +28,14 @@
     /* max-height: fit-content; */
     /* min-height: 35vh; */
     aspect-ratio: 1.62;
-    margin: .5rem;
+    /* margin: .5rem; */
     gap: 1rem;
 }
 
 .left-div{
     /* width: 48rem; */
     /* height: 18rem; */
+    margin-left: -3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -108,6 +109,10 @@
     letter-spacing: 1px;
 }
 
+.btn:hover{
+    background-color: #420076;
+}
+
 
 
 
@@ -120,7 +125,9 @@
     aspect-ratio: 0.9;
     margin: 0;
     margin-bottom: 1rem;  
+    margin-right: -2rem;
     justify-content: center; 
+    flex: 1fr;
 }
 
 .q-heading{
@@ -137,7 +144,7 @@
     width: 25px;
     height: 20px;
     margin: 0;
-    margin-bottom: -.5rem;
+    margin-bottom: 0rem;
 }
 
 .quote{
@@ -152,7 +159,7 @@
     /* height: 50%; */
     letter-spacing: 2px;
     font-family: 'GT America Mono Bold', sans-serif;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 .quote::-webkit-scrollbar{
@@ -270,7 +277,7 @@
     
 }
 
-@media (500px< width < 800px){
+@media (600px< width < 800px){
     .btn{
         width: 85%;
         font-size: 1.3rem;
@@ -285,7 +292,7 @@
     
 }
 
-@media (width < 500px){
+@media (width < 600px){
     .q-container{
         /* height: 20rem; */
         margin: 0.5rem -.5rem;

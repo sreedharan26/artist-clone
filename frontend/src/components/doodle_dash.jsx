@@ -29,7 +29,7 @@ export default function Doodle(){
 
     const handleClick = () => {
         const i = data !== null && data.length > 0 ? Math.floor(Math.random() * data.length) : 0;
-        console.log(i, data[i].idea.length)
+        // console.log(i, data[i].idea.length)
         if(data[i].idea.length > 80){
             setIsBig(true)
         }else{

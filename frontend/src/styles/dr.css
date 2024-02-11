@@ -69,6 +69,9 @@
     padding: .7rem 1.25rem;
     font-family: 'GT America Mono Thin', sans-serif;
 }
+.dr-btn:hover{
+    background-color: #420076;
+}
 
 .right-dr-cont{
     /* aspect-ratio: 1.7; */
@@ -161,7 +164,7 @@
     top: 6px;
 }
 
-@media (width < 500px){
+@media (width < 600px){
     .dr-container{
         aspect-ratio: 2.53;
         gap: 0rem;

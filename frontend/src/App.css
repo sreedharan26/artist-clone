@@ -162,7 +162,7 @@ footer{
   }
 }
 
-@media (width < 500px){
+@media (width < 600px){
   .grid{
     display: flex;
     flex-direction: column;
