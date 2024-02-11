@@ -11,7 +11,7 @@ export default function Prompt(){
 
     const fetchData = async () => {
         try{
-            const res = await axios.get('http://localhost:3000/images')
+            const res = await axios.get('https://artist-rituals.onrender.com/images')
             // return res.data;
             setDataArray(res.data)
             // const index = Math.floor(Math.random() * res.data.length)
@@ -64,7 +64,7 @@ export default function Prompt(){
                     </button>
                 </div>
                 <div className="image-container">
-                    <img src={data && data[index].imagebase64 ? `data:image/jpeg;base64,${base64}`: ''} className='p-image' />
+                    <img src={data && data[index].imagebase64 ? `data:image/jpeg;base64,${base64}`: image} className='p-image' />
                 </div>  
             </div>
         </>
