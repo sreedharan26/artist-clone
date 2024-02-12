@@ -12,7 +12,7 @@ const getImages = async ( prompt) => {
             "seed": 945216760,
             "img_width": 512,
             "img_height": 768,
-            "base64": false
+            "base64": true
         }
         try {
             const response = await axios.post(url, options, { headers: { 'x-api-key': api_key } });

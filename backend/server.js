@@ -29,7 +29,7 @@ const makeRequestWithDelay =  async (delay, promptObj) => {
     await new Promise(resolve => setTimeout(resolve, delay*1000));
     try{
         const imageResponse = await getImages(promptObj.prompt)
-        if(imageResponse instanceof Error){
+                if(imageResponse instanceof Error){
             throw new Error(imageResponse.status)
         }
         const updatedData = await axios.patch(
