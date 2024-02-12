@@ -3,6 +3,7 @@ import image1 from "../assets/image3.png"
 import image2 from "../assets/image4.png"
 import image3 from "../assets/image5.png"
 import image4 from "../assets/image6.png"
+import group from "../assets/Group7.png"
 
 
 export default function DailyRituals(){
@@ -21,7 +22,14 @@ export default function DailyRituals(){
                     </button>
                 </div>
                 <div className="right-dr-cont">
-                    <div className="dr-i-cont image1">
+                        <img src={group} className="group"/>
+                </div>
+            </div>
+        </>
+    )
+}
+
+{/* <div className="dr-i-cont image1">
                             <div className="dr-img-cont">
                                 <img className="dr-image" src={image1} />
                             </div>
@@ -52,9 +60,4 @@ export default function DailyRituals(){
                             <div className="dr-i-wrapper">
 
                             </div>
-                    </div>
-                </div>
-            </div>
-        </>
-    )
-}
+                    </div> */}
