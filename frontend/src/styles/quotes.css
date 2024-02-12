@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: .5rem;
+    /* padding: .5rem; */
     height: max-content;
     /* max-height: fit-content; */
     /* min-height: 35vh; */
@@ -45,7 +45,7 @@
     gap: 2rem;
     /* flex: 1; */
     aspect-ratio: 0.58;
-    margin-top: 1.5rem;
+    /* margin-top: 1.5rem; */
 
 }
 
@@ -179,8 +179,8 @@
 }
 
 .large-quote{
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 1.3rem;
+    line-height: 1.7rem;
     letter-spacing: -.5px;
 }
 
@@ -251,8 +251,8 @@
         line-height: 1.4rem;
     }
     .large-quote{
-        font-size: .8rem;
-        line-height: 1rem;
+        font-size: .9rem;
+        line-height: 1.2rem;
     }
     .name{
         font-size: 1.1rem;
