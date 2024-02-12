@@ -73,6 +73,11 @@
     background-color: #420076;
 }
 
+.link{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
 .right-dr-cont{
     /* aspect-ratio: 1.7; */
     height: 100%;
@@ -162,6 +167,27 @@
 .image4 .dr-i-wrapper{
     transform: rotate(-8deg);
     top: 6px;
+}
+
+@media (1000px < width < 1200px){
+    .dr-heading{
+        font-size: 1.65rem;
+        margin-bottom: 1rem;
+    }
+    .dr-p{
+        margin-top: 0;
+        font-size: 1.1rem;
+    }
+    .dr-btn{
+        padding: .5rem .7rem;
+    }
+    .link{
+        font-size: 1rem;
+        padding: 0;
+    }
+    .image2{
+        margin-left: -1.3rem;
+    }
 }
 
 @media (width < 600px){

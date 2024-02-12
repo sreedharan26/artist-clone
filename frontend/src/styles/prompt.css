@@ -26,7 +26,7 @@
 
 .p-container{
     height: auto;
-    aspect-ratio: 1.5;
+    aspect-ratio: 1.55;
     margin: .7rem;
 }
 
@@ -229,6 +229,19 @@
     }
     .last-container{
         margin-top: 0rem;
+    }
+}
+
+@media (1000px < width < 1200px){
+    .p-heading{
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .prompt{
+        font-size: 1rem;
+    }
+    .button{
+        font-size: 1rem;
     }
 }
 

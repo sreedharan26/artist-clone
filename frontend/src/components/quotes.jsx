@@ -12,6 +12,7 @@ export default function Quotes(){
     const [isBig, setIsBig] = useState(true);
     const [large, setLarge] = useState(false);
     const [cname, setCname] = useState('');
+    const [lname, setLname] = useState('');
     const { fontSize, ref } = useFitText();
 
     const fetchData = async () => {
@@ -30,21 +31,27 @@ export default function Quotes(){
         }
         func();
         isBig ? setCname("big-quote") : setCname("") 
+        large ? setLname("large-quote") : setLname("")
     }, [])
     
     useEffect(() => {
-          if(data!==null && data[index] !==null && data[index].quote.length > 60){
+          if(data!==null && data[index] !==null && (data[index].quote.length > 60 && data[index].quote.length <80) ){
               setIsBig(true);
               setLarge(false)
-          }else if(data!==null && data[index] !==null && data[index].quote.length > 80){
-                setLarge(true)
+          }else if(data!==null && data[index] !==null && (data[index].quote.length > 80 && data[index].quote.length < 100)){
+                setLarge(false)
                 setIsBig(false);
-          }else{
+          }else if(data!==null && data[index] !==null && (data[index].quote.length > 100)){
             setIsBig(false)
-            setLarge(false)
+            setLarge(true)
           }
           setImage(data !== null && !isNaN(index) && data[index]!==null && data[index].image && data[index].image[0] && data[index].image[0].url)
       }, [index])
+
+      useEffect(() => {
+        isBig ? setCname("big-quote") : setCname("") 
+        large ? setLname("large-quote") : setLname("")
+      }, [isBig, large])
 
     const handleClick = () => {
         const i = data !== null && data.length > 0 ? Math.floor(Math.random() * data.length) : 0;
@@ -66,7 +73,7 @@ export default function Quotes(){
                 <div className="right-div" ref={ref} style={{ fontSize, width: "68%", height: "100%" }}>
                     <p className="q-heading">Visionary Voices</p>
                     <img src={quote} className="quote-image"/>
-                    <h1 className={`quote ${cname} ${large ? "large-quote" : ''}`}>
+                    <h1 className={`quote ${cname} ${lname}`}>
                         {data && !isNaN(index) && data[index] ? data[index].quote  : ''}
                     </h1>
                     <p className="name"><b>{data && !isNaN(index) && data[index] ? data[index].name : 'Author'}</b></p>

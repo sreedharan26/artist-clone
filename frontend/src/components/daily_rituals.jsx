@@ -17,7 +17,7 @@ export default function DailyRituals(){
                         Find your artist personality
                     </p>
                     <button className="dr-btn">
-                        Fill questionnaire
+                        <a href="https://l0lle7fw607.typeform.com/to/cCbgs1Ee" target="_blank" className="link">Fill questionnaire</a>
                     </button>
                 </div>
                 <div className="right-dr-cont">

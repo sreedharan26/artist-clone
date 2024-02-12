@@ -36,9 +36,9 @@
     }
 }
 
-@media (1000px< width <1440px) {
+@media (1000px< width <1250px) {
     .content{
-        width: 39vw;
+        width: 43vw;
         /* max-height: 45vh; */
     }
 }
