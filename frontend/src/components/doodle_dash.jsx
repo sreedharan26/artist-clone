@@ -10,11 +10,7 @@ export default function Doodle(){
     const fetchData = async () => {
         try{
             const res = await axios.get('https://artist-rituals.onrender.com/ideas')
-            // return res.data;
             setDataArray(res.data)
-            // const index = Math.floor(Math.random() * res.data.length)
-            // setRandomIndex(index);
-            console.log(res.data)
         }catch(e){
             console.log(e);
         }
@@ -46,8 +42,8 @@ export default function Doodle(){
                     <p className="heading">Creative Catalysts</p>
                     <button className="d-btn" onClick={handleClick}>Shuffle</button>
                 </div>
-                <h1 className="doodle">{data!==null ? data[index].heading : ''}</h1>
-                <p className={`doo-description ${isBig ? "big-desc" : ''}`}>{data !== null ? data[index].idea : ''}</p>
+                <h1 className="doodle">{data!==null && !isNaN(index) && data[index]  ? data[index].heading : ''}</h1>
+                <p className={`doo-description ${isBig ? "big-desc" : ''}`}>{data !== null && !isNaN(index) && data[index] ? data[index].idea : ''}</p>
             </div>
         </>
     )

@@ -12,11 +12,7 @@ export default function Prompt(){
     const fetchData = async () => {
         try{
             const res = await axios.get('https://artist-rituals.onrender.com/images')
-            // return res.data;
             setDataArray(res.data)
-            // const index = Math.floor(Math.random() * res.data.length)
-            // setRandomIndex(index);
-            console.log(res.data)
         }catch(e){
             console.log(e);
         }
@@ -27,27 +23,27 @@ export default function Prompt(){
           await fetchData();
         }
         func();
-        setBase64(x => data ? data[index].imagebase64 : "")
     }, [])
-
+    
     useEffect(() => {
-        setBase64(x => data ? data[index].imagebase64: "")
+        setBase64(x => data && !isNaN(index) && data[index] ? data[index].imagebase64: "")
     }, [index])
-
-
+    
+    
     const handleClick = () => {
         const i = data !== null && data.length > 0 ? Math.floor(Math.random() * 20) : 0;
         console.log(data[i].imagebase64)
+        setBase64(x => data && !isNaN(index) && data[index] ? data[index].imagebase64 : "")
         setIndex(i);
     }
     
 
 
-    const inputRef = useRef()
+    // const inputRef = useRef()
 
-    function focus(){
-        inputRef.current.focus()
-    }
+    // function focus(){
+    //     inputRef.current.focus()
+    // }
 
     return (
         <>
@@ -57,14 +53,14 @@ export default function Prompt(){
                 </p>
                 <div className="prompt-shuffle-container">
                     <div className="prompt">
-                        {`${data && data[index].prompt ? data[index].prompt : ''}`}
+                        {`${data && !isNaN(index) && data[index] ? data[index].prompt : ''}`}
                     </div>
                     <button className='button' onClick={handleClick}>
                         Shuffle
                     </button>
                 </div>
                 <div className="image-container">
-                    <img src={data && data[index].imagebase64 ? `data:image/jpeg;base64,${base64}`: image} className='p-image' />
+                    <img src={data && !isNaN(index) && data[index] && data[index].imagebase64 ? `data:image/jpeg;base64,${base64}`: image} className='p-image' />
                 </div>  
             </div>
         </>
