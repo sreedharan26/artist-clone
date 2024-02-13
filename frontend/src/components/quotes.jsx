@@ -70,7 +70,7 @@ export default function Quotes(){
                     </div>
                     <button className="btn" onClick={handleClick}>Shuffle</button>
                 </div>
-                <div className="right-div" ref={ref} style={{ fontSize, width: "68%", height: "100%" }}>
+                <div className="right-div" >
                     <p className="q-heading">Visionary Voices</p>
                     <img src={quote} className="quote-image"/>
                     <h1 className={`quote ${cname} ${lname}`}>

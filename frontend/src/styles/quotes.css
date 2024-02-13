@@ -29,7 +29,7 @@
     /* max-height: fit-content; */
     /* min-height: 35vh; */
     aspect-ratio: 1.47;
-    margin: 0 .5rem;
+    margin: .5rem;
     gap: .7rem;
 }
 
@@ -153,12 +153,12 @@
 
 .quote{
     position: relative;
-    margin-top: 0.5rem;
-    margin-bottom: 0.2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.1rem;
     margin-left: .1rem;
     color: #476576;
-    font-size: 2.1rem;
-    line-height: 2.2rem;
+    font-size: 1.9rem;
+    line-height: 2.1rem;
     /* width: 20rem; */
     /* height: 50%; */
     letter-spacing: 2px;
@@ -171,16 +171,16 @@
 }
 
 .big-quote{
-    font-size: 1.4rem;
-    line-height: 1.7rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
     letter-spacing: 0px;
     margin-top: .5rem;
 
 }
 
 .large-quote{
-    font-size: 1.3rem;
-    line-height: 1.7rem;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
     letter-spacing: -.5px;
 }
 
@@ -367,7 +367,9 @@
     .left-div{
         align-items: center;
         justify-content: center;
-        gap: 1rem;
+        gap: 0rem;
+        margin-left: -.5rem;
+        margin-right: -1rem;
     }
     .img-cont{
         width: 60%;
@@ -387,6 +389,7 @@
     }
     .right-div{
         /* margin-bottom: .3rem; */
+        margin-right: .5rem;
     }
     .q-heading{
         font-size: .7rem;
