@@ -363,11 +363,12 @@
         /* height: 20rem; */
         margin: 0.5rem -.5rem;
         aspect-ratio: 1.43;
+        gap: 1rem;
     }
     .left-div{
         align-items: center;
         justify-content: center;
-        gap: 0rem;
+        gap: .5rem;
         margin-left: -.5rem;
         margin-right: -1rem;
     }
@@ -379,13 +380,15 @@
         margin-left: 1rem;
     }
     .q-image{
-        width: 10rem;
+        width: 7rem;
         height: 10rem;
+        margin-bottom: 0;
     }
     .btn{
         font-size: .7rem;
         border-radius: 5px;
         width: 70%;
+        margin-top: .5rem;
     }
     .right-div{
         /* margin-bottom: .3rem; */

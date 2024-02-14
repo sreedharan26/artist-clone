@@ -1,4 +1,5 @@
 import "../styles/quotes.css"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import image1 from "../assets/image3.png"
 import axios from 'axios'
 import { useEffect, useState } from "react"
@@ -7,6 +8,7 @@ import useFitText from "use-fit-text";
 
 export default function Quotes(){
     const [data, setDataArray] = useState(null)
+    const [urls, setUrls] = useState([])
     const [image, setImage] = useState('')
     const [index, setIndex] = useState(0);
     const [isBig, setIsBig] = useState(true);
@@ -19,10 +21,32 @@ export default function Quotes(){
         try{
             const res = await axios.get('https://artist-rituals.onrender.com/quotes')
             setDataArray(res.data)
+            const url = res.data.map(x => x && x.image && x.image[0].url)
+            setUrls(x => url);
         }catch(e){
             console.log(e);
         }
     }
+
+    const preloadImages = async (urls = []) => {
+        try {
+            console.log('started')
+            const promises = urls.map(url => {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () => resolve(url);
+                    img.onerror = () => reject(new Error(`Failed to load image: ${url}`));
+                    img.src = url;
+                });
+            });
+
+            await Promise.all(promises);
+
+            console.log('Images loaded successfully.');
+        } catch (error) {
+            console.error('Error preloading images:', error);
+        }
+    };
 
 
     useEffect(()=> {
@@ -30,6 +54,7 @@ export default function Quotes(){
           await fetchData();
         }
         func();
+        preloadImages(urls);
         isBig ? setCname("big-quote") : setCname("") 
         large ? setLname("large-quote") : setLname("")
     }, [])
@@ -65,7 +90,7 @@ export default function Quotes(){
                 <div className="left-div">
                     <div className="q-i-cont">
                         <div className="img-cont">
-                            <img className="q-image" src={image ? image : (data && data[index] && data[index].image && data[index].image[0] && data[index].image[0].url)} />
+                            <img loading="lazy" className="q-image" src={image ? image : (data && data[index] && data[index].image && data[index].image[0] && data[index].image[0].url)} />
                         </div>
                     </div>
                     <button className="btn" onClick={handleClick}>Shuffle</button>
