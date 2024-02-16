@@ -2,7 +2,7 @@ const getImagesData = (table3) => {
     return new Promise((resolve, reject) => {
         table3.select({
             view: 'Grid view',
-            fields: ['Name' ,'imageBase64']
+            fields: ['Name' ,'image']
         }).firstPage((err, records) => {
             if (err) {
                 console.error(err);
@@ -11,7 +11,7 @@ const getImagesData = (table3) => {
                 const data = records.map(record => ({
                     id: record.id,
                     prompt: record.get('Name'),
-                    imagebase64: record.get('imageBase64')
+                    image: record.get('image')
                 }));
                 resolve(data);
             }
