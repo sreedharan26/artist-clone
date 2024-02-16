@@ -10,6 +10,8 @@ export default function Prompt(){
     const [index, setIndex] = useState(0)
     const [base64, setBase64] = useState('')
     const [image, setImage] = useState('')
+    const [big, setBig] = useState(false);
+    const [cname, setCname] = useState('');
 
     const fetchData = async () => {
         try{
@@ -31,7 +33,17 @@ export default function Prompt(){
         // setBase64(x => data && !isNaN(index) && data[index] ? data[index].imagebase64: "")
         setImage(data !== null && !isNaN(index) && data[index]!==null && data[index].image && data[index].image[0] && data[index].image[0].url)
 
+        if(data!==null && !isNaN(index) && data[index] !==null && (data[index].prompt.length >= 30)){
+            setBig(true)
+        }else{
+            setBig(false)
+        }
+
     }, [index])
+
+    useEffect(() => {
+        big ? setCname("big") : setCname("")
+    }, [big])
     
     
     const handleClick = () => {
@@ -40,7 +52,6 @@ export default function Prompt(){
         // setBase64(x => data && !isNaN(index) && data[index] ? data[index].imagebase64 : "")
         setIndex(i);
         setImage(data !== null && !isNaN(index) && data[index]!==null && data[index].image && data[index].image[0] && data[index].image[0].url)
-
     }
     
 
@@ -58,7 +69,7 @@ export default function Prompt(){
                     Spark Your Imagination
                 </p>
                 <div className="prompt-shuffle-container">
-                    <div className="prompt">
+                    <div className={`prompt ${cname}`}>
                         {`${data && !isNaN(index) && data[index] ? data[index].prompt : ''}`}
                     </div>
                     <button className='button' onClick={handleClick}>
