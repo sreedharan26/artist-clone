@@ -1,7 +1,3 @@
-// import { useState, useEffect } from 'react'
-// import axios from 'axios'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './components/header'
 import Card from './components/card'
@@ -10,8 +6,24 @@ import Doodle from './components/doodle_dash'
 import Prompt from './components/prompt'
 import star from './assets/star.png'
 import DailyRituals from './components/daily_rituals'
+import Form from "./components/form"
+import Star from './components/star'
+import {useState, useEffect } from 'react'
+import { useMemo } from 'react'
 
-function App() {
+function App() {  
+  const [loaded, setLoaded] = useState(true);
+
+  const data = {
+    "id": 1,
+    "question": "How do you prefer to start your day?",
+    "options": ["Diving straight into creative work", "Reviewing my to-do list"]
+  }
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [loaded]);
+  
 
   return (
     <>
@@ -38,18 +50,21 @@ function App() {
       </div>
       <footer>
         <div className="bottom-star">
-                      <img src={star} />
-                      <img src={star} />
-                      <img src={star} />
-                      <img src={star} />
-                      <img src={star} />
-                      <img src={star} />
-                      <img src={star} />
-                      <img src={star} />
-                      <img src={star} />
-                      <img src={star} />
+          <Star />
+          <Star />
+          <Star />
+          <Star />
+          <Star />
+          <Star />
+          <Star />
+          <Star />
+          <Star />
+          <Star />
         </div>
       </footer>
+      <form>
+        {/* <Form data={data}/> */}
+      </form>
     </>
   )
 }

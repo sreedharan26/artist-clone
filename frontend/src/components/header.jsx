@@ -1,4 +1,4 @@
-import star from "../assets/star.png"
+import Star from "./star"
 import head from "../assets/ArtistRituals.svg"
 
 export default function Header(){
@@ -7,16 +7,16 @@ export default function Header(){
             <div className="header">
                 <img src={head} className="head-img" /> 
                 <div className="star">
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
+                    <Star />
+                    <Star />
+                    <Star />
+                    <Star />
+                    <Star />
+                    <Star />
+                    <Star />
+                    <Star />
+                    <Star />
+                    <Star />
                 </div>
             </div>
             <div className="bottom-border">

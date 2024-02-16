@@ -38,7 +38,7 @@ body{
   align-items: center;
 }
 
-.star img{
+.star svg{
   margin: 1rem 0;
   margin-right: -15px;
   padding: 0;
@@ -89,7 +89,7 @@ body{
 
 }
 
-.bottom-star img{
+.bottom-star svg{
   margin-right: -15px;
   padding: 0;
 }
@@ -152,6 +152,8 @@ footer{
 @media (width < 600px){
   .header{
     height: auto;
+    margin: 0 .5rem;
+    padding-right: .5rem;
   }
   .grid{
     display: flex;
@@ -168,12 +170,12 @@ footer{
     margin-top: -2rem;
     margin-left: 0rem;
   }
-  .bottom-star img{
+  .bottom-star svg{
     width: 25px;
     height: 25px;
     margin-right: -10px;
   }
-  .star img{
+  .star svg{
     width: 16px;
     height: 16px;
     margin: 0;

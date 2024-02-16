@@ -8,45 +8,21 @@ import useFitText from "use-fit-text";
 
 export default function Quotes(){
     const [data, setDataArray] = useState(null)
-    const [urls, setUrls] = useState([])
     const [image, setImage] = useState('')
     const [index, setIndex] = useState(0);
     const [isBig, setIsBig] = useState(true);
     const [large, setLarge] = useState(false);
     const [cname, setCname] = useState('');
     const [lname, setLname] = useState('');
-    const { fontSize, ref } = useFitText();
 
     const fetchData = async () => {
         try{
             const res = await axios.get('https://artist-rituals.onrender.com/quotes')
             setDataArray(res.data)
-            const url = res.data.map(x => x && x.image && x.image[0].url)
-            setUrls(x => url);
         }catch(e){
             console.log(e);
         }
     }
-
-    const preloadImages = async (urls = []) => {
-        try {
-            console.log('started')
-            const promises = urls.map(url => {
-                return new Promise((resolve, reject) => {
-                    const img = new Image();
-                    img.onload = () => resolve(url);
-                    img.onerror = () => reject(new Error(`Failed to load image: ${url}`));
-                    img.src = url;
-                });
-            });
-
-            await Promise.all(promises);
-
-            console.log('Images loaded successfully.');
-        } catch (error) {
-            console.error('Error preloading images:', error);
-        }
-    };
 
 
     useEffect(()=> {
@@ -54,7 +30,6 @@ export default function Quotes(){
           await fetchData();
         }
         func();
-        preloadImages(urls);
         isBig ? setCname("big-quote") : setCname("") 
         large ? setLname("large-quote") : setLname("")
     }, [])
@@ -90,7 +65,14 @@ export default function Quotes(){
                 <div className="left-div">
                     <div className="q-i-cont">
                         <div className="img-cont">
-                            <img loading="lazy" className="q-image" src={image ? image : (data && data[index] && data[index].image && data[index].image[0] && data[index].image[0].url)} />
+                            <LazyLoadImage 
+                                src={image ? image : (data && data[index] && data[index].image && data[index].image[0] && data[index].image[0].url)}
+                                PlaceholderSrc={(data && data[index] && data[index].image && data[index].image[0] && data[index].image[0].thumbnails && data[index].image[0].thumbnails.small && data[index].image[0].thumbnails.small.url)}
+                                // width={500} 
+                                // height={400}
+                                alt={data && !isNaN(index) && data[index] && data[index].image && data[index].image[0] && data[index].image[0].filename}
+                                className='q-image'
+                            />
                         </div>
                     </div>
                     <button className="btn" onClick={handleClick}>Shuffle</button>

@@ -3,11 +3,13 @@ import image from '../assets/image2.jpeg'
 import vector from '../assets/Vector.png'
 import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Prompt(){
     const [data, setDataArray] = useState(null)
     const [index, setIndex] = useState(0)
     const [base64, setBase64] = useState('')
+    const [image, setImage] = useState('')
 
     const fetchData = async () => {
         try{
@@ -26,15 +28,19 @@ export default function Prompt(){
     }, [])
     
     useEffect(() => {
-        setBase64(x => data && !isNaN(index) && data[index] ? data[index].imagebase64: "")
+        // setBase64(x => data && !isNaN(index) && data[index] ? data[index].imagebase64: "")
+        setImage(data !== null && !isNaN(index) && data[index]!==null && data[index].image && data[index].image[0] && data[index].image[0].url)
+
     }, [index])
     
     
     const handleClick = () => {
-        const i = data !== null && data.length > 0 ? Math.floor(Math.random() * 20) : 0;
-        console.log(data[i].imagebase64)
-        setBase64(x => data && !isNaN(index) && data[index] ? data[index].imagebase64 : "")
+        const i = data !== null && data.length > 0 ? Math.floor(Math.random() * 50) : 0;
+        // console.log(data[i].image)
+        // setBase64(x => data && !isNaN(index) && data[index] ? data[index].imagebase64 : "")
         setIndex(i);
+        setImage(data !== null && !isNaN(index) && data[index]!==null && data[index].image && data[index].image[0] && data[index].image[0].url)
+
     }
     
 
@@ -60,7 +66,15 @@ export default function Prompt(){
                     </button>
                 </div>
                 <div className="image-container">
-                    <img src={data && !isNaN(index) && data[index] && data[index].imagebase64 ? `data:image/jpeg;base64,${base64}`: image} className='p-image' />
+                    {/* <img loading='lazy' src={image ? image : (data && data[index] && data[index].image && data[index].image[0] && data[index].image[0].url)} className='p-image' /> */}
+                    <LazyLoadImage 
+                        src={image ? image : (data && !isNaN(index) && data[index] && data[index].image && data[index].image[0] && data[index].image[0].url)}
+                        PlaceholderSrc={(data && !isNaN(index) && data[index] && data[index].image && data[index].image[0] && data[index].image[0].thumbnails && data[index].image[0].thumbnails.small && data[index].image[0].thumbnails.small.url)}
+                        // width={600} 
+                        // height={400}
+                        alt={data && !isNaN(index) && data[index] && data[index].image && data[index].image[0] && data[index].image[0].filename}
+                        className='p-image'
+                    />
                 </div>  
             </div>
         </>
