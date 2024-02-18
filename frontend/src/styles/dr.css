@@ -61,6 +61,7 @@
     border: none;
     padding: .7rem 1.25rem;
     font-family: 'GT America Mono Thin', sans-serif;
+    cursor: pointer;
 }
 .dr-btn:hover{
     background-color: #420076;

@@ -4,9 +4,10 @@ import image2 from "../assets/image4.png"
 import image3 from "../assets/image5.png"
 import image4 from "../assets/image6.png"
 import group from "../assets/Group7.png"
+import FormWrapper from "./formWrapper"
 
 
-export default function DailyRituals(){
+export default function DailyRituals({open}){
     return (
         <>
             <div className="dr-container">
@@ -17,8 +18,9 @@ export default function DailyRituals(){
                     <p className="dr-p"> 
                         Find your artist personality
                     </p>
-                    <button className="dr-btn">
-                        <a href="https://l0lle7fw607.typeform.com/to/cCbgs1Ee" target="_blank" className="link">Fill questionnaire</a>
+                    <button className="dr-btn" onClick={open}>
+                        {/* <a href="https://l0lle7fw607.typeform.com/to/cCbgs1Ee" target="_blank" className="link">Fill questionnaire</a> */}
+                        Fill questionnaire
                     </button>
                 </div>
                 <div className="right-dr-cont">

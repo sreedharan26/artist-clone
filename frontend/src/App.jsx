@@ -4,20 +4,20 @@ import Card from './components/card'
 import Quotes from './components/quotes'
 import Doodle from './components/doodle_dash'
 import Prompt from './components/prompt'
-import star from './assets/star.png'
 import DailyRituals from './components/daily_rituals'
-import Form from "./components/form"
+import FormWrapper from './components/formWrapper'
 import Star from './components/star'
 import {useState, useEffect } from 'react'
-import { useMemo } from 'react'
 
 function App() {  
   const [loaded, setLoaded] = useState(true);
+  const [showModal, setShowModal] = useState(false)
 
-  const data = {
-    "id": 1,
-    "question": "How do you prefer to start your day?",
-    "options": ["Diving straight into creative work", "Reviewing my to-do list"]
+  const closeModal = () => {
+    setShowModal(false)
+  }
+  const openModal = () => {
+    setShowModal(true)
   }
 
   useEffect(() => {
@@ -36,7 +36,7 @@ function App() {
               />
           </Card>
           <Card>
-            <DailyRituals />
+            <DailyRituals  open = {openModal} />
           </Card>
         </div>
         <div className="right-side">
@@ -62,9 +62,7 @@ function App() {
           <Star />
         </div>
       </footer>
-      <form>
-        {/* <Form data={data}/> */}
-      </form>
+      {showModal && <FormWrapper close = {closeModal} />}
     </>
   )
 }

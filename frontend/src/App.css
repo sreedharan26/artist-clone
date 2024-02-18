@@ -100,6 +100,25 @@ footer{
     margin-top: -4rem;
 }
 
+.modal-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background-color: black;
+  opacity: .76;
+}
+
+.form-cont{
+  z-index: 5;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 @media (width > 1440px){
   .header{
