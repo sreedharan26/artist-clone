@@ -1,11 +1,11 @@
 import { useState } from "react"
 
 export default function Form({data, res, setRes}){
-    const [response, setResponse] = useState(null)
+    // const [response, setResponse] = useState(null)
 
     const handleClick = (e) => {
         // console.log(e)
-        setResponse(e.target.value)
+        // setResponse(e.target.value)
         const value = parseInt(e.target.value)
         const checked = e.target.checked
         // console.log(value, checked)

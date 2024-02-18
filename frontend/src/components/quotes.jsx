@@ -67,7 +67,7 @@ export default function Quotes(){
                         <div className="img-cont">
                             <LazyLoadImage 
                                 src={image ? image : (data && data[index] && data[index].image && data[index].image[0] && data[index].image[0].url)}
-                                // PlaceholderSrc={(data && data[index] && data[index].image && data[index].image[0] && data[index].image[0].thumbnails && data[index].image[0].thumbnails.small && data[index].image[0].thumbnails.small.url)}
+                                PlaceholderSrc={(data && data[index] && data[index].image && data[index].image[0] && data[index].image[0].thumbnails && data[index].image[0].thumbnails.small && data[index].image[0].thumbnails.small.url)}
                                 // width={500} 
                                 // height={400}
                                 alt={data && !isNaN(index) && data[index] && data[index].image && data[index].image[0] && data[index].image[0].filename}

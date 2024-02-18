@@ -80,11 +80,12 @@ export default function Prompt(){
                     {/* <img loading='lazy' src={image ? image : (data && data[index] && data[index].image && data[index].image[0] && data[index].image[0].url)} className='p-image' /> */}
                     <LazyLoadImage 
                         src={image ? image : (data && !isNaN(index) && data[index] && data[index].image && data[index].image[0] && data[index].image[0].url)}
-                        // placeholderSrc={(data && !isNaN(index) && data[index] && data[index].image && data[index].image[0] && data[index].image[0].thumbnails && data[index].image[0].thumbnails.small && data[index].image[0].thumbnails.small.url)}
+                        placeholderSrc={(data && !isNaN(index) && data[index] && data[index].image && data[index].image[0] && data[index].image[0].thumbnails && data[index].image[0].thumbnails.small && data[index].image[0].thumbnails.small.url)}
                         // width={600} 
                         // height={400}
                         alt={data && !isNaN(index) && data[index] && data[index].image && data[index].image[0] && data[index].image[0].filename}
                         className='p-image'
+                        effect='blur'
                     />
                 </div>  
             </div>

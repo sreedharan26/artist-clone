@@ -78,6 +78,7 @@ form{
     font-size: 1.3rem;
     font-family: 'GT America Mono Thin', sans-serif;
     display: flex;
+    align-items: center;
     gap: 1rem;
 }
 
@@ -104,6 +105,45 @@ button:disabled{
     opacity: .2;
     cursor: not-allowed;
 }
+
+label{
+    cursor: pointer;
+}
+
+input[type="checkbox"]{
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    padding: 7px;
+    font: inherit;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid #464646;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]:checked{
+    background: #FEFFBE;
+    border: 1.5px solid rgba(0, 10, 255, 1);
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: .6em;
+    height: .6em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em rgba(0, 10, 255, 1);
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
 
 
 @media (width > 2400px){
