@@ -5,7 +5,7 @@ const gptImages = async (prompt) => {
                                     {
                                         headers: {
                                             "Content-Type": "application/json",
-                                            Authorization: `Bearer akfa`
+                                            Authorization: `Bearer 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`
                                         }
                                     },
                                     {

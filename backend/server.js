@@ -11,6 +11,7 @@ const getIdeas = require('./operations/ideas')
 const getImages = require('./operations/promptImages')
 const getPrompts = require('./operations/prompts')
 const getImagesData = require('./operations/imageData')
+const getArtistsData = require('./operations/artistPersonality')
 
 app.use(cors())
 app.use(compression({
@@ -23,6 +24,7 @@ const base = new Airtable({apiKey: process.env.API_KEY_ODB}).base('app5C3EKxBArX
 const table1 = base('Visionary voices');
 const table2 = base('Creative Catalyst');
 const table3 = base('Image prompts');
+const table4 = base('Form');
 
 
 const makeRequestWithDelay =  async (delay, promptObj) => {
@@ -78,6 +80,17 @@ app.get('/ideas',  async (req, res) => {
 app.get('/images', async ( req, res) => {
     try{
         const data = await getImagesData(table3)
+        res.json(data)
+    }
+    catch(e){
+        console.log('Error in generating Image', e)
+        res.status(500).send('Error in generating Image', e.message)
+    }
+})
+
+app.get('/artistData', async ( req, res) => {
+    try{
+        const data = await getArtistsData(table4)
         res.json(data)
     }
     catch(e){
