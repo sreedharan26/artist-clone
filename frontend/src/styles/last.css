@@ -54,7 +54,7 @@ ul{
 .point{
     list-style: none;
     padding-left: 0;
-    font-size: 1rem;
+    font-size: .9rem;
     color: #131630;
     font-family: 'GT America Mono Thin', sans-serif;
     /* margin-bottom: .3rem; */

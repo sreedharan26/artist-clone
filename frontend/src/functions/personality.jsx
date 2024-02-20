@@ -36,7 +36,7 @@ export default function guessPersonality(artistData = [], userResponse = []){
         
     })
     let freq = 0
-    let error = 2
+    let error = 5
     let artists = []
     for(let [artist, count] of commonArtists.entries()){
         if(count > freq){
@@ -45,7 +45,7 @@ export default function guessPersonality(artistData = [], userResponse = []){
     }
     for(let [artist, count] of commonArtists.entries()){
         let x = freq - error
-        if((x > 0 && count >= x) || (count === x)){
+        if((count >= x) || (count === freq)){
             artists.push(artist)
         }
     }
