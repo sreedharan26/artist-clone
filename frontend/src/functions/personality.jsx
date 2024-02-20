@@ -24,7 +24,7 @@ export default function guessPersonality(artistData = [], userResponse = []){
         // let currentCommon = artistData && artistData[data && (data.id-1)][data && data.selected && (data.selected[0] - 1)]
         for(let i = 0; i < responsesLength; i++){
             // currentCommon = findCommon(currentCommon, artistData[data && (data.id-1)][data && data.selected && (data.selected[i] - 1)])
-            artistData && artistData[data && (data.id-1)][data && data.selected && (data.selected[0] - 1)].forEach((artist) => {
+            artistData && artistData[data && (data.id-1)][data && data.selected && (data.selected[0] - 1)] && artistData[data && (data.id-1)][data && data.selected && (data.selected[0] - 1)].forEach((artist) => {
                 if(commonArtists.has(artist)){
                     let count = commonArtists.get(artist);
                     commonArtists.set(artist, count + 1)

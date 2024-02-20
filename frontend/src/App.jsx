@@ -30,13 +30,13 @@ function App() {
       <Header />
       <div className='grid'>
         <div className='left-side'>
+          <Card>
+            <DailyRituals  open = {openModal} />
+          </Card>
           <Card >
               <Quotes 
                   // data={dataArray !== null ? dataArray : null}   
               />
-          </Card>
-          <Card>
-            <DailyRituals  open = {openModal} />
           </Card>
         </div>
         <div className="right-side">

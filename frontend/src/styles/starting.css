@@ -1,0 +1,204 @@
+.start-card{
+    z-index: 5;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    padding: 3rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    aspect-ratio: 1.6;
+    background-color: rgba(254, 255, 190, 1);
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+
+}
+
+.sc-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex: 1fr;
+    margin: auto 0;
+
+    padding-right: 2rem;
+}
+
+.sc-head{
+    font-size: 2rem;
+    font-family: "GT America Mono Medium";
+    display: inline;
+    margin: 0;
+}
+
+.sc-text{
+    font-family: 'GT America Mono Thin', sans-serif;
+    font-size: 1.43rem;
+}
+
+.sc-buttons button{
+    width: 20%;
+    font-size: 1.2rem;
+}
+
+
+
+@media (1200px < width < 1400px){
+    .start-card{
+        width: 50%;
+        border-radius: 7px;
+        padding: 2rem ;
+        /* padding-bottom: .5rem; */
+        /* padding-right: .5rem; */
+    }
+    .sc-content{
+        gap: .7rem;
+        padding-right: 0;
+    }
+    .sc-head{
+        font-size: 1.8rem;
+    }
+    .sc-text{
+        margin: .4rem 0;
+        margin-bottom: 1rem;
+        /* margin: 0; */
+        font-size: 1.25rem;
+    }
+    .sc-buttons button{
+        width: 25%;
+        font-size: 1.3rem;
+        padding: .2rem;
+        border-radius: 5px;
+        margin-bottom: -1.4rem;
+        margin-right: -1.4rem;
+    }
+}
+
+@media (1000px < width < 1200px){
+    .start-card{
+        width: 55%;
+        border-radius: 7px;
+        padding: 2rem ;
+        /* padding-bottom: .5rem; */
+        /* padding-right: .5rem; */
+    }
+    .sc-content{
+        gap: .7rem;
+        padding-right: 0;
+    }
+    .sc-head{
+        font-size: 1.7rem;
+    }
+    .sc-text{
+        margin: .4rem 0;
+        margin-bottom: 1rem;
+        /* margin: 0; */
+        font-size: 1.07rem;
+    }
+    .sc-buttons button{
+        width: 25%;
+        font-size: 1.3rem;
+        padding: .2rem;
+        border-radius: 5px;
+        margin-bottom: -1.4rem;
+        margin-right: -1.4rem;
+    }
+}
+
+@media (800px < width < 1000px){
+    .start-card{
+        width: 70%;
+        border-radius: 7px;
+        padding: 2rem ;
+        /* padding-bottom: .5rem; */
+        /* padding-right: .5rem; */
+    }
+    .sc-content{
+        gap: .7rem;
+        padding-right: 0;
+    }
+    .sc-head{
+        font-size: 1.5rem;
+    }
+    .sc-text{
+        margin: .4rem 0;
+        margin-bottom: 1rem;
+        /* margin: 0; */
+        font-size: 1.08rem;
+    }
+    .sc-buttons button{
+        width: 25%;
+        font-size: 1.2rem;
+        padding: .2rem;
+        border-radius: 5px;
+        margin-bottom: -1.4rem;
+        margin-right: -1.4rem;
+    }
+}
+
+
+@media (600px < width < 800px){
+    .start-card{
+        width: 70%;
+        border-radius: 7px;
+        padding: 2rem ;
+    }
+    .sc-content{
+        gap: .7rem;
+        padding-right: 0;
+    }
+    .sc-head{
+        font-size: 1.5rem;
+    }
+    .sc-text{
+        margin: .4rem 0;
+        margin-bottom: 1rem;
+        /* margin: 0; */
+        font-size: 1rem;
+    }
+    .sc-buttons button{
+        width: 24%;
+        font-size: 1.2rem;
+        padding: .2rem;
+        border-radius: 5px;
+        margin-bottom: -1.4rem;
+        margin-right: -1.4rem;
+    }
+}
+
+@media (width < 600px){
+    .start-card{
+        width: 70%;
+        border-radius: 7px;
+        padding: 2rem ;
+        /* padding-bottom: .5rem; */
+        /* padding-right: .5rem; */
+    }
+    .sc-content{
+        gap: .7rem;
+        padding-right: 0;
+    }
+    .sc-head{
+        font-size: 1rem;
+    }
+    .sc-text{
+        margin: .4rem 0;
+        margin-bottom: 1rem;
+        /* margin: 0; */
+        font-size: .8rem;
+    }
+    .sc-buttons button{
+        width: 25%;
+        font-size: .8rem;
+        padding: .2rem;
+        border-radius: 5px;
+        margin-bottom: -1.4rem;
+        margin-right: -1.4rem;
+    }
+}

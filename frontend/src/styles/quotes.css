@@ -362,7 +362,8 @@
     .q-container{
         /* height: 20rem; */
         margin: 0.5rem -.5rem;
-        aspect-ratio: 1.43;
+        /* aspect-ratio: 1.43; */
+        aspect-ratio: none;
         gap: 1rem;
     }
     .left-div{
@@ -404,18 +405,18 @@
         margin-left: .1rem;
     }
     .quote{
-        font-size: 1.1rem;
-        line-height: 1.1rem;
+        font-size: 1.18rem;
+        line-height: 1.3rem;
     }
     .big-quote{
         margin-top: .2rem;
-        font-size: .8rem;
-        line-height: 1rem;
+        font-size: 1.15rem;
+        line-height: 1.3rem;
         margin-bottom: 0;
     }
     .large-quote{
-        font-size: .8rem;
-        line-height: 1rem;
+        font-size: .9rem;
+        line-height: 1.15rem;
     }
     .name{
         font-size: .8rem;
@@ -455,8 +456,8 @@
         margin-top: .2rem;
     }
     .big-quote{
-        font-size: .6rem;
-        line-height: .8rem;
+        font-size: 1.12rem;
+        line-height: 1.3rem;
     }
     .big-quote ~ .name{
         font-size: .6rem;

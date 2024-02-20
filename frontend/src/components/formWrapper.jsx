@@ -3,11 +3,16 @@ import axios from "axios"
 import Form from "./form"
 import "../styles/formwrapper.css"
 import guessPersonality from "../functions/personality"
+import schedule from "../functions/schedule"
+import StartingCard from "./startingCard"
+import LastCard from "./lastCard"
 
 export default function FormWrapper({close}){
     const [responseData, setResponseData] = useState(null)
-    const [formIndex, setFormIndex] = useState(0)
+    const [formIndex, setFormIndex] = useState(-1)
     const [artistsData, setArtistsData] = useState(null)
+    const [data1, setData1] = useState(null)
+    const [artist, setArtist] = useState(null)
     const data = [
         {
             id: 1,
@@ -89,7 +94,28 @@ export default function FormWrapper({close}){
     const fetchData = async () => {
         try{
             const res = await axios.get('https://artist-rituals.onrender.com/artistData')
-            setArtistsData(res.data)
+            const data = res.data
+            let personalityArray = []
+            for(const question of data){
+                let questionArray = []
+                for(let option of question){
+                    let opt =option && option[0] && option[0].split(", ")
+                    questionArray.push(opt)
+                }
+                personalityArray.push(questionArray)
+            }
+            // console.log(personalityArray)
+            setArtistsData(personalityArray)
+        }catch(e){
+            console.log(e);
+        }
+    }
+
+    const fetchData1 = async () => {
+        try{
+            let res = await axios.get('https://artist-rituals.onrender.com/getArtists')
+            setData1(res.data)
+            // console.log("fetched")
         }catch(e){
             console.log(e);
         }
@@ -98,10 +124,10 @@ export default function FormWrapper({close}){
     useEffect(() => {
         const res = data.map((obj, i) => (
             { id : obj.id, question: obj.question, selected:[]}
-       ))
-       setResponseData(res)  
-    //    console.log(res)
-            fetchData()
+        ))
+        setResponseData(res)  
+        fetchData()
+        fetchData1()
     }, [])
 
     useEffect(() => {
@@ -121,17 +147,25 @@ export default function FormWrapper({close}){
         setFormIndex(x => x - 1)
         // console.log(responseData)
     }
+    // console.log(formIndex)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if(formIndex < data.length - 1)
+        if(formIndex < data.length - 1 ){
             handleNext() 
+        }
         else{
-            close()
+            handleNext()
+            // close()
             // alert('Form Submitted')
-            console.log(responseData)
+            // console.log(responseData)
+            // console.log(data1)
+            // console.log(artistsData)
             const artists = guessPersonality(artistsData, responseData)
             console.log(artists)
+            const artistX = schedule(artists, data1)
+            setArtist(artistX)
+            // console.log(artists)
         } 
     }    
 
@@ -139,29 +173,30 @@ export default function FormWrapper({close}){
         <>
             <div className="modal-wrapper" onClick={close}>
             </div>
-            <div className="form-cont">
-                <div className="q-no">
-                        {formIndex + 1}
-                </div>
-                <div className="form-right-side">
-                    <form onSubmit={handleSubmit} >
-                        <div className="form">
-                            <div className="ques-option-cont">
-                                {responseData && 
-                                    <Form 
-                                        data={data[formIndex]} 
-                                        res={responseData[formIndex]} 
-                                        setRes = {setResponseData}
-                                />}
+            {formIndex === -1 ? <StartingCard next={handleNext} /> : formIndex === data.length   ? <LastCard author={artist}/> :
+                 <div className="form-cont">
+                    <div className="q-no">
+                            {formIndex + 1}
+                    </div>
+                    <div className="form-right-side">
+                        <form onSubmit={handleSubmit} >
+                            <div className="form">
+                                <div className="ques-option-cont">
+                                    {responseData && 
+                                        <Form 
+                                            data={data[formIndex]} 
+                                            res={responseData[formIndex]} 
+                                            setRes = {setResponseData}
+                                    />}
+                                </div>
+                                <div className="buttons">
+                                    {formIndex !== -1 && <button type="button" onClick={handlePrev}>previous</button>}
+                                    <button type="submit">{formIndex < data.length - 1 ? "Next" : "Submit"}</button>
+                                </div>
                             </div>
-                            <div className="buttons">
-                                <button type="button" disabled={formIndex === 0} onClick={handlePrev}>previous</button>
-                                <button type="submit">{formIndex < data.length - 1 ? "Next" : "Submit"}</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+                        </form>
+                    </div>
+                </div>}
         </>
     )
 }
