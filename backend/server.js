@@ -12,6 +12,7 @@ const getImages = require('./operations/promptImages')
 const getPrompts = require('./operations/prompts')
 const getImagesData = require('./operations/imageData')
 const getArtistsData = require('./operations/artistPersonality')
+const getArtists = require('./operations/artistByname')
 
 app.use(cors())
 app.use(compression({
@@ -96,6 +97,16 @@ app.get('/artistData', async ( req, res) => {
     catch(e){
         console.log('Error in generating Image', e)
         res.status(500).send('Error in generating Image', e.message)
+    }
+})
+
+app.get('/getArtists', async (req, res) => {
+    try{
+        const data = await getArtists(table1)
+        res.json(data)
+    }
+    catch(e){
+        res.status(500).send('Error retrieving data from Airtable');
     }
 })
 
