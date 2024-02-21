@@ -173,7 +173,7 @@ export default function FormWrapper({close}){
         <>
             <div className="modal-wrapper" onClick={close}>
             </div>
-            {formIndex === -1 ? <StartingCard next={handleNext} /> : formIndex === data.length   ? <LastCard author={artist}/> :
+            {formIndex === -1 ? <StartingCard next={handleNext} /> : formIndex === data.length   ? <LastCard author={artist} close={close} /> :
                  <div className="form-cont">
                     <div className="q-no">
                             {formIndex + 1}

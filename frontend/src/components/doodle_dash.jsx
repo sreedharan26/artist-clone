@@ -1,11 +1,13 @@
 import '../styles/doodle.css'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import random from '../functions/random';
 
 export default function Doodle(){
     const [data, setDataArray] = useState(null)
     const [index, setIndex] = useState(0);
     const [isBig, setIsBig] = useState(false);
+    const [hasIt, setHastIt] = useState([])
 
     const fetchData = async () => {
         try{
@@ -24,8 +26,10 @@ export default function Doodle(){
     }, [])
 
     const handleClick = () => {
-        const i = data !== null && data.length > 0 ? Math.floor(Math.random() * data.length) : 0;
+        // const i = data !== null && data.length > 0 ? Math.floor(Math.random() * data.length) : 0;
         // console.log(i, data[i].idea.length)
+        let n = data && data.length;
+        let i = random(hasIt, n)
         if(data[i].idea.length > 80){
             setIsBig(true)
         }else{

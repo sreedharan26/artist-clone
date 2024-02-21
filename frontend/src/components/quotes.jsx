@@ -4,7 +4,7 @@ import image1 from "../assets/image3.png"
 import axios from 'axios'
 import { useEffect, useState } from "react"
 import quote from '../assets/qu.svg'
-import useFitText from "use-fit-text";
+import random from "../functions/random"
 
 export default function Quotes(){
     const [data, setDataArray] = useState(null)
@@ -14,6 +14,7 @@ export default function Quotes(){
     const [large, setLarge] = useState(false);
     const [cname, setCname] = useState('');
     const [lname, setLname] = useState('');
+    const [hasIt, setHastIt] = useState([])
 
     const fetchData = async () => {
         try{
@@ -54,7 +55,8 @@ export default function Quotes(){
       }, [isBig, large])
 
     const handleClick = () => {
-        const i = data !== null && data.length > 0 ? Math.floor(Math.random() * data.length) : 0;
+        let n = data && data.length
+        let i = random(hasIt, n)
         setIndex(i);
         setImage(data !== null && !isNaN(index) && data[index]!==null && data[index].image && data[index].image[0] && data[index].image[0].url)
     }

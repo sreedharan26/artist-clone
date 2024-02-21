@@ -1,8 +1,7 @@
 import '../styles/prompt.css'
-import image from '../assets/image2.jpeg'
-import vector from '../assets/Vector.png'
 import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
+import random from '../functions/random';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Prompt(){
@@ -12,6 +11,7 @@ export default function Prompt(){
     const [image, setImage] = useState('')
     const [big, setBig] = useState(false);
     const [cname, setCname] = useState('');
+    const [hasIt, setHastIt] = useState([])
 
     const fetchData = async () => {
         try{
@@ -47,9 +47,8 @@ export default function Prompt(){
     
     
     const handleClick = () => {
-        const i = data !== null && data.length > 0 ? Math.floor(Math.random() * 50) : 0;
-        // console.log(data[i].image)
-        // setBase64(x => data && !isNaN(index) && data[index] ? data[index].imagebase64 : "")
+        let i = random(hasIt, 86)
+        // console.log(hasIt)
         setIndex(i);
         setImage(data !== null && !isNaN(index) && data[index]!==null && data[index].image && data[index].image[0] && data[index].image[0].url)
     }
