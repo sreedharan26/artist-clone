@@ -15,8 +15,22 @@ export default function Prompt(){
 
     const fetchData = async () => {
         try{
-            const res = await axios.get('https://artist-rituals.onrender.com/images')
-            setDataArray(res.data)
+            const res = await axios.get('https://nextjsbackend-rouge.vercel.app/api/prompts')
+
+            let newData = []
+            for(const obj of res.data){
+                // console.log(obj)
+                const newObj = {
+                    id: obj.id,
+                    prompt: obj.fields?.["Name"],
+                    image: obj.fields?.["image"],
+                }
+                newData && newData.push(newObj)
+            }
+            newData = newData.filter(x => x && x.image!== undefined)
+            // console.log(newData)
+            setDataArray(newData)
+
         }catch(e){
             console.log(e);
         }
@@ -47,7 +61,7 @@ export default function Prompt(){
     
     
     const handleClick = () => {
-        let i = random(hasIt, 86)
+        let i = random(hasIt, 85)
         // console.log(hasIt)
         setIndex(i);
         setImage(data !== null && !isNaN(index) && data[index]!==null && data[index].image && data[index].image[0] && data[index].image[0].url)

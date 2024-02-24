@@ -93,13 +93,17 @@ export default function FormWrapper({close}){
 
     const fetchData = async () => {
         try{
-            const res = await axios.get('https://artist-rituals.onrender.com/artistData')
+            const res = await axios.get('https://nextjsbackend-rouge.vercel.app/api/artistData')
             const data = res.data
             let personalityArray = []
             for(const question of data){
                 let questionArray = []
-                for(let option of question){
-                    let opt =option && option[0] && option[0].split(", ")
+                // for(let option of question){
+                //     let opt =option && option[0] && option[0].split(", ")
+                //     questionArray.push(opt)
+                // }
+                for(let i =1 ; i<5;i++){
+                    let opt = question.fields?.[`option${i}`]?.split(", ")
                     questionArray.push(opt)
                 }
                 personalityArray.push(questionArray)
@@ -113,8 +117,25 @@ export default function FormWrapper({close}){
 
     const fetchData1 = async () => {
         try{
-            let res = await axios.get('https://artist-rituals.onrender.com/getArtists')
-            setData1(res.data)
+            let res = await axios.get('https://nextjsbackend-rouge.vercel.app/api/getArtists')
+            
+            const newData = []
+            for(const obj of res.data){
+                // console.log(obj)
+                const newObj = {
+                    id: obj.id,
+                    name: obj.fields?.["author name"],
+                    image: obj.fields?.["Author Headshots"],
+                    desc: obj.fields?.["What he did"],
+                    schedule: obj.fields?.["Daily Schedule"]
+                }
+                newData && newData.push(newObj)
+            }
+            console.log(newData)
+            // setDataArray(newData)
+
+
+            setData1(newData)
             // console.log("fetched")
         }catch(e){
             console.log(e);

@@ -1,0 +1,181 @@
+.q1-container{
+    display: flex;
+    /* align-items: center; */
+    aspect-ratio: 1.5;
+    position: relative;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.left-div1{
+    /* background-color: aliceblue; */
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    height: fit-content;
+    flex: .35;
+    gap: 1rem;
+}
+
+.q1-image{
+    width: 100%;
+}
+
+.btn1{
+    width: 80%;
+    font-size: 1.3rem;
+    background-color: #8F00FF;
+    color: white;
+    font-family: 'GT America Mono Thin', sans-serif;
+    border-radius: 10px;
+    padding: .3rem;
+    cursor: pointer;
+    border: none;
+    letter-spacing: 1px;
+    aspect-ratio: 3.6;
+}
+
+.right-div1{
+    /* background-color:aquamarine; */
+    /* width: 90%; */
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-evenly;
+    flex: .65;
+    /* gap: .5rem; */
+}
+
+.q1-heading{
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: #131630;
+    font-family: 'GT America Mono Thin', sans-serif;
+    margin: 1rem 0;
+}
+
+.quote-image1{
+    width: 25px;
+    height: 20px;
+    margin: 0;
+}
+
+.quote1{
+    font-size: 2rem;
+    color: #476576;
+    font-family: 'GT America Mono Bold', sans-serif;
+    margin: 0.2rem 0;
+}
+
+.big-quote1{
+    font-size: 1.8rem;
+}
+
+.large-quote1{
+    font-size: 1.6rem;
+}
+
+.name1{
+    font-size: 1.2rem;
+    color: #131630;
+    font-family: 'GT America Mono Medium', sans-serif;
+    margin: .8rem 0;
+}
+
+.description1{
+    margin: 0;
+    font-size: 1rem;
+    color: #131630;
+    font-family: 'GT America Mono Thin', sans-serif;
+}
+
+@media (1200px < width < 1400px){
+    
+}
+
+@media (1000px < width < 1200px){
+    .btn1{
+        font-size: 1.1rem;
+    }
+    .q1-heading{
+        font-size: 1.1rem;
+    }
+    .quote-image1{
+        width: 20px;
+        height: 15px;
+    }
+    .quote1{
+        font-size: 1.6rem;
+    }
+    .big-quote1{
+        font-size: 1.4rem;
+    }
+    .large-quote1{
+        font-size: 1.2rem;
+    }
+    .name1{
+        margin: .4rem 0;
+    }
+    .big-quote1 ~ .name1{
+        font-size: 1rem;
+    }
+    .big-quote1 ~ .description1{
+        font-size: .9rem;
+    }
+    .large-quote1 ~ .name1{
+        font-size: .9rem;
+    }
+    .large-quote1 ~ .description1{
+        font-size: .8rem;
+    }
+
+
+}
+
+@media (width < 600px){
+    .btn1{
+        font-size: .7rem;
+        border-radius: 5px;
+        width: 85%;
+    }
+    .q1-heading{
+        font-size: .7rem;
+        margin: .5rem 0;
+    }
+    .quote-image1{
+        width: 11px;
+        height: 10px;
+    }
+    .quote1{
+        font-size: 1.2rem;
+    }
+    .big-quote1{
+        font-size: 1.05rem;
+    }
+    .large-quote1{
+        font-size: .8rem;
+    }
+    .name1{
+        font-size: .8rem;
+        margin: .3rem 0;
+    }
+    .description1{
+        font-size: .7rem;
+    }
+    .big-quote1 ~ .name1{
+        font-size: .75rem;
+    }
+    .big-quote1 ~ .description1{
+        font-size: .65rem;
+    }
+    .large-quote1 ~ .name1{
+        font-size: .7rem;
+    }
+    .large-quote1 ~.description1{
+        font-size: .6rem;
+    }
+
+}

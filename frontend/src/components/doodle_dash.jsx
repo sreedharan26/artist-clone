@@ -11,8 +11,21 @@ export default function Doodle(){
 
     const fetchData = async () => {
         try{
-            const res = await axios.get('https://artist-rituals.onrender.com/ideas')
-            setDataArray(res.data)
+            const res = await axios.get('https://nextjsbackend-rouge.vercel.app/api/ideas')
+
+            const newData = []
+            for(const obj of res.data){
+                // console.log(obj)
+                const newObj = {
+                    id: obj.id,
+                    heading: obj.fields?.["Heading"],
+                    idea: obj.fields?.["Description"]
+                }
+                newData && newData.push(newObj)
+            }
+            // console.log(newData)
+            setDataArray(newData)
+
         }catch(e){
             console.log(e);
         }

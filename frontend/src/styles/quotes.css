@@ -28,7 +28,7 @@
     height: max-content;
     /* max-height: fit-content; */
     /* min-height: 35vh; */
-    aspect-ratio: 1.47;
+    aspect-ratio: 1.27;
     margin: .5rem;
     gap: .7rem;
 }
@@ -36,6 +36,7 @@
 .left-div{
     /* width: 48rem; */
     /* height: 18rem; */
+    width: 40%;
     margin-left: -1rem;
     display: flex;
     flex-direction: column;
@@ -44,7 +45,7 @@
     position: relative;
     gap: 2rem;
     /* flex: 1; */
-    aspect-ratio: 0.58;
+    /* aspect-ratio: 0.58; */
     /* margin-top: 1.5rem; */
 
 }

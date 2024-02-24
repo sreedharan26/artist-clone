@@ -1,13 +1,14 @@
 import './App.css'
 import Header from './components/header'
 import Card from './components/card'
-import Quotes from './components/quotes'
+// import Quotes from './components/quotes'
 import Doodle from './components/doodle_dash'
 import Prompt from './components/prompt'
 import DailyRituals from './components/daily_rituals'
 import FormWrapper from './components/formWrapper'
 import Star from './components/star'
 import {useState, useEffect } from 'react'
+import Quotes1 from './components/quotes1'
 
 function App() {  
   const [loaded, setLoaded] = useState(true);
@@ -34,7 +35,7 @@ function App() {
             <DailyRituals  open = {openModal} />
           </Card>
           <Card >
-              <Quotes 
+              <Quotes1 
                   // data={dataArray !== null ? dataArray : null}   
               />
           </Card>

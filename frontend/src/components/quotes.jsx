@@ -1,6 +1,5 @@
 import "../styles/quotes.css"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import image1 from "../assets/image3.png"
 import axios from 'axios'
 import { useEffect, useState } from "react"
 import quote from '../assets/qu.svg'
@@ -18,7 +17,7 @@ export default function Quotes(){
 
     const fetchData = async () => {
         try{
-            const res = await axios.get('https://artist-rituals.onrender.com/quotes')
+            const res = await axios.get('http://localhost:3000/api/quotes')
             setDataArray(res.data)
         }catch(e){
             console.log(e);
