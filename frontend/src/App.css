@@ -86,7 +86,8 @@ body{
 }
 
 .bottom-star{
-
+  position: sticky;
+  bottom: -8rem;
 }
 
 .bottom-star svg{
@@ -96,8 +97,8 @@ body{
 
 footer{
 
-    margin-left: 4rem;
-    margin-top: -4rem;
+    margin-left: 2rem;
+    /* margin-top: -8rem; */
 }
 
 .modal-wrapper{
@@ -119,13 +120,42 @@ footer{
   transform: translate(-50%, -50%);
 }
 
+.contact-btn{
+  border: none;
+  background: #F2BFFF;
+  padding: .8rem 1.5rem;
+  border-radius: 24px;
+  /* margin-bottom: 5rem; */
+  margin-top: -3rem;
+  position: absolute;
+  right: 2rem;
+  /* bottom: 0rem; */
+  cursor: pointer;
+}
+
+.contact-us-redirect{
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: black;
+  font-family: 'GT America Mono Medium', sans-serif;
+  cursor: pointer;
+}
 
 
-@media (width > 1440px){
+@media (width > 1400px){
   .header{
    
   }
+  .contact-btn{
+    /* right: 1rem; */
+  }
 
+}
+
+@media ( 1200px < width < 1400px){
+  .contact-btn{
+    right: 1rem;
+  }
 }
 
 @media (1000px < width < 1200px ){
@@ -140,7 +170,9 @@ footer{
     margin-left: 1rem;
     margin-bottom: 1rem;
   }
-  
+  .contact-btn{
+    right: 1.5rem;
+  }
 
 }
 
@@ -152,6 +184,9 @@ footer{
   }
   .head-img{
     width: 20vw;
+  }
+  .contact-btn{
+    right: 1rem
   }
 }
 
@@ -203,6 +238,15 @@ footer{
   }
   .head-img{
     width: 30vw;
+  }
+  .contact-btn{
+    margin-top: 0rem;
+    right: 0rem;
+    margin-right: 3vw;
+    padding: .5rem 1rem;
+  }
+  .contact-us-redirect{
+    font-size: .8rem;
   }
 }
 

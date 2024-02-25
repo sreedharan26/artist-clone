@@ -64,6 +64,7 @@ function App() {
         </div>
       </footer>
       {showModal && <FormWrapper close = {closeModal} />}
+      <button className='contact-btn'><a href='#' className='contact-us-redirect'>Contact Us</a></button>
     </>
   )
 }

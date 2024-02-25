@@ -38,6 +38,10 @@
     aspect-ratio: 3.6;
 }
 
+.btn1:hover{
+    background-color: #420076;
+}
+
 .right-div1{
     /* background-color:aquamarine; */
     /* width: 90%; */
@@ -64,18 +68,18 @@
 }
 
 .quote1{
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #476576;
-    font-family: 'GT America Mono Bold', sans-serif;
+    font-family: 'GT America Mono Medium', sans-serif;
     margin: 0.2rem 0;
 }
 
 .big-quote1{
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 .large-quote1{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
 
 .name1{
@@ -150,10 +154,10 @@
         height: 10px;
     }
     .quote1{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .big-quote1{
-        font-size: 1.05rem;
+        font-size: 1rem;
     }
     .large-quote1{
         font-size: .8rem;

@@ -52,18 +52,18 @@ export default function Quotes1(){
           if(data!==null && data[index] !==null && (data[index].quote.length > 60 && data[index].quote.length <80) ){
             //   setIsBig(true);
             // setCname("big-quote1")
-            console.log(data[index].quote.length)
+            // console.log(data[index].quote.length)
             setCname("")
             //   setLarge(false)
           }else if(data!==null && data[index] !==null && (data[index].quote.length > 90 && data[index].quote.length < 120)){
                 // setLarge(false)
                 setCname("big-quote1")
                 // setIsBig(false);
-                console.log(data[index].quote.length)
+                // console.log(data[index].quote.length)
           }else if(data!==null && data[index] !==null && (data[index].quote.length > 100)){
             // setIsBig(false)
             setCname("large-quote1")
-            console.log(data[index].quote.length)
+            // console.log(data[index].quote.length)
 
             // setLarge(true)
           }else{

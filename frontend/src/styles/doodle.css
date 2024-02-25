@@ -106,7 +106,7 @@
 @media (width < 600px){
     .d-container{
         margin: auto .5rem;
-        aspect-ratio: 2.1;
+        /* aspect-ratio: 2.1; */
     }
     .heading{
         font-size: .7rem;
@@ -118,6 +118,7 @@
     .doodle{
         font-size: 1.12rem;
         line-height: 1.3rem;
+        margin: .6rem 0;
     }
     .doo-description{
         font-size: .7rem;

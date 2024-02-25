@@ -131,7 +131,7 @@ export default function FormWrapper({close}){
                 }
                 newData && newData.push(newObj)
             }
-            console.log(newData)
+            // console.log(newData)
             // setDataArray(newData)
 
 
