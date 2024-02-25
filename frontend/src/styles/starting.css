@@ -47,6 +47,13 @@
     font-size: 1.2rem;
 }
 
+.red-sc-text{
+    color: #FF0000;
+    font-family: 'GT America Mono Medium', sans-serif;
+    margin: auto 0 ;
+
+}   
+
 
 
 @media (1200px < width < 1400px){
@@ -200,5 +207,9 @@
         border-radius: 5px;
         margin-bottom: -1.4rem;
         margin-right: -1.4rem;
+    }
+    .red-sc-text{
+        font-size: .8rem;
+        margin-bottom: 1rem;
     }
 }
