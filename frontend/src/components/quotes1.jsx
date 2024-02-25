@@ -8,7 +8,7 @@ import random from "../functions/random"
 export default function Quotes1(){
     const [data, setDataArray] = useState(null)
     const [image, setImage] = useState('')
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(random([], 10));
     const [isBig, setIsBig] = useState(true);
     const [large, setLarge] = useState(false);
     const [cname, setCname] = useState('');

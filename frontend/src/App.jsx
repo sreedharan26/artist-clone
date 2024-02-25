@@ -64,7 +64,8 @@ function App() {
         </div>
       </footer>
       {showModal && <FormWrapper close = {closeModal} />}
-      <button className='contact-btn'><a href='#' className='contact-us-redirect'>Contact Us</a></button>
+      <button className='contact-btn'><a href='https://www.linkedin.com/in/jayesh-patil-87229a154/' target='_blank' className='contact-us-redirect'>Say Hello!</a></button>
+      <div className='bottm-margin'></div>
     </>
   )
 }

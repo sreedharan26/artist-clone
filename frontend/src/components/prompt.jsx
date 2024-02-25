@@ -6,7 +6,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Prompt(){
     const [data, setDataArray] = useState(null)
-    const [index, setIndex] = useState(0)
+    const [index, setIndex] = useState(random([], 10))
     const [base64, setBase64] = useState('')
     const [image, setImage] = useState('')
     const [big, setBig] = useState(false);

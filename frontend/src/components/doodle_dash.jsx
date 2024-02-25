@@ -5,7 +5,7 @@ import random from '../functions/random';
 
 export default function Doodle(){
     const [data, setDataArray] = useState(null)
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(random([], 10));
     const [isBig, setIsBig] = useState(false);
     const [hasIt, setHastIt] = useState([])
 

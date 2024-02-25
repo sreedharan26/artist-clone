@@ -142,6 +142,11 @@ footer{
 }
 
 
+.bottm-margin{
+  height: 2rem;
+  margin-bottom: 1rem;
+}
+
 @media (width > 1400px){
   .header{
    
