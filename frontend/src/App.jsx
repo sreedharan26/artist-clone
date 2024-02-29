@@ -6,6 +6,7 @@ import Doodle from './components/doodle_dash'
 import Prompt from './components/prompt'
 import DailyRituals from './components/daily_rituals'
 import FormWrapper from './components/formWrapper'
+import TodoList from './components/todoList'
 import Star from './components/star'
 import {useState, useEffect } from 'react'
 import Quotes1 from './components/quotes1'
@@ -41,6 +42,9 @@ function App() {
           </Card>
         </div>
         <div className="right-side">
+          <Card>
+            <TodoList />
+          </Card>
           <Card>
             <Doodle />
           </Card>

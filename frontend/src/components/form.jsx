@@ -38,6 +38,7 @@ export default function Form({data, res, setRes}){
         <div key={i} className="options">
             <input 
                 type="checkbox" 
+                className="form-checkbox"
                 id={i}
                 name={i} 
                 value={i+1} 
