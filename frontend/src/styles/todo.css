@@ -170,6 +170,9 @@ input[type="text"]:focus{
 }
 
 @media ( width < 600px){
+    .t-cont{
+        gap: .6rem;
+    }
     .dots-cont{
         width: 1rem;
         aspect-ratio: 0.1;
@@ -186,7 +189,7 @@ input[type="text"]:focus{
         width: .8rem;
         height: .8rem;
         border: 2px solid #464646;
-        margin-bottom: auto;
+        margin: .2rem 0;
     }
     .text-area{
         font-size: .8rem;
@@ -196,5 +199,11 @@ input[type="text"]:focus{
     }
     .dots-cont svg{
         /* height: 230px; */
+    }
+}
+
+@media (width < 400px){
+    .todo-head{
+        font-size: .68rem;
     }
 }
