@@ -186,11 +186,24 @@ input[type="text"]:focus{
     }
 
     .todo-checkbox{
-        width: .8rem;
-        height: .8rem;
+        width: .9rem;
+        height: .9rem;
         border: 2px solid #464646;
         margin: .2rem 0;
     }
+    .todo-checkbox::before {
+        width: .5rem;
+        height: .5rem;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset .8rem .8rem #529300;
+        transform-origin: center;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+    .todo-checkbox:checked{
+        border: 2px solid #529300;
+    }
+
     .text-area{
         font-size: .8rem;
         line-height: normal;
