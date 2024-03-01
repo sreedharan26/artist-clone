@@ -2,15 +2,24 @@
 
 .t-cont{
     width: 100%;
+    height: fit-content;
     display: flex;
     gap: 1rem;
 }
 
 .dots-cont{
-    /* display: flex; */
-    /* flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     /* gap: .3rem; */
-    overflow-y: hidden;
+
+}
+
+.dots-cont svg{
+    display: flex;
+    flex-direction: column;
+    width: 15px;
+    /* height: 250px; */
+    /* overflow: hidden; */
 }
 
 .list-cont{
@@ -30,10 +39,12 @@
 .list-item-cont{
     display: flex;
     background-color: white;
+    align-items: flex-start;
     gap: 1rem;
-    padding: 0rem 1rem;
+    padding: 0.5rem 1rem;
+    /* padding-bottom: 0.3rem; */
     width: 1fr;
-    margin-bottom: .8rem;
+    margin-bottom: .5rem;
     border-radius: 8px;
 }
 /* .label{
@@ -45,7 +56,7 @@
     cursor: pointer;
     -webkit-appearance: none;
     appearance: none;
-    margin: auto 0;
+    margin: .5rem 0;
     font: inherit;
     color: currentColor;
     width: 1.6rem;
@@ -98,9 +109,10 @@ input[type="text"]:focus{
 
 .text-area{
     width: 100%;
+    height: 2.5rem;
     padding: 0;
-    padding-top: .5rem;
     margin: 0;
+    /* margin-top: .5rem; */
     border: none;
     font-size: 1.75rem;
     font-family: "Kalam", cursive;
@@ -109,14 +121,12 @@ input[type="text"]:focus{
     font-style: normal;
     resize: none;
     overflow-y: hidden;
-    line-height: 2rem;
-    display: flex;
-    align-items: center; 
+    line-height: normal;
 }
 
 .text-area::placeholder{
     color: #001AFF4D;
-    line-height: 2rem;
+    line-height: normal;
 }
 
 .text-area:focus{
@@ -181,6 +191,10 @@ input[type="text"]:focus{
     .text-area{
         font-size: .8rem;
         line-height: normal;
+        height: 1.313rem;
         padding-top: 0;
+    }
+    .dots-cont svg{
+        /* height: 230px; */
     }
 }
