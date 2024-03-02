@@ -11,9 +11,75 @@ import Star from './components/star'
 import {useState, useEffect } from 'react'
 import Quotes1 from './components/quotes1'
 
+
+function LargerGrid({openModal}){
+  return <div className='grid'>
+            <div className='left-side'>
+              <Card>
+                <DailyRituals  open = {openModal} />
+              </Card>
+              <Card >
+                  <Quotes1 
+                      // data={dataArray !== null ? dataArray : null}   
+                  />
+              </Card>
+            </div>
+            <div className="right-side">
+              <Card>
+                <TodoList />
+              </Card>
+              <Card>
+                <Doodle />
+              </Card>
+              <Card>
+                <Prompt />
+              </Card>
+            </div>
+          </div>
+}
+
+function SmallerGrid({openModal}){
+  return (
+    <>
+      <div className='smaller-grid'>
+          <Card>
+            <DailyRituals open={openModal} />
+          </Card>
+          <Card>
+            <TodoList />
+          </Card>
+          <Card>
+            <Quotes1 />
+          </Card>
+          <Card>
+            <Doodle />
+          </Card>
+          <Card>
+            <Prompt />
+          </Card>
+      </div>
+    </>
+  )
+}
+
 function App() {  
   const [loaded, setLoaded] = useState(true);
   const [showModal, setShowModal] = useState(false)
+  const [width, setWidth] = useState(window.innerWidth || null)
+
+  const updateWindowSize = () => {
+    console.log(window.innerWidth)
+    setWidth(window.innerWidth)
+  }
+ 
+  useEffect(() => {
+    window.addEventListener('resize', updateWindowSize);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', updateWindowSize);
+    };
+  }, []); 
 
   const closeModal = () => {
     setShowModal(false)
@@ -30,29 +96,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className='grid'>
-        <div className='left-side'>
-          <Card>
-            <DailyRituals  open = {openModal} />
-          </Card>
-          <Card >
-              <Quotes1 
-                  // data={dataArray !== null ? dataArray : null}   
-              />
-          </Card>
-        </div>
-        <div className="right-side">
-          <Card>
-            <TodoList />
-          </Card>
-          <Card>
-            <Doodle />
-          </Card>
-          <Card>
-            <Prompt />
-          </Card>
-        </div>
-      </div>
+      {width && width > 982 ? <LargerGrid openModal={openModal}/> : <SmallerGrid openModal={openModal} />}
       <footer>
         <div className="bottom-star">
           <Star />

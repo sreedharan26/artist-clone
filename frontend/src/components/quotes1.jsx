@@ -7,6 +7,7 @@ import random from "../functions/random"
 
 export default function Quotes1(){
     const [data, setDataArray] = useState(null)
+    const [urls, setUrls] = useState([])
     const [image, setImage] = useState('')
     const [index, setIndex] = useState(random([], 10));
     const [isBig, setIsBig] = useState(true);
@@ -20,6 +21,7 @@ export default function Quotes1(){
             const res = await axios.get('https://nextjsbackend-rouge.vercel.app/api/quotes')
             // console.log(res)
             const newData = []
+            const newUrls = []
             for(const obj of res.data){
                 // console.log(obj)
                 const newObj = {
@@ -30,14 +32,37 @@ export default function Quotes1(){
                     quote: obj.fields?.["Quote"]
                 }
                 newData && newData.push(newObj)
+                newUrls && newUrls.push(newObj.image && newObj.image[0]?.url)
             }
             // console.log(newData)
+            setUrls(newUrls)
             setDataArray(newData)
         }catch(e){
             console.log(e);
         }
     }
 
+    useEffect(() => {
+        const preloadImages = async () => {
+          const promises = urls.map(url => {
+            return new Promise((resolve, reject) => {
+              const image = new Image();
+              image.src = url;
+              image.onload = () => resolve(url);
+              image.onerror = () => reject(new Error(`Failed to load image: ${url}`));
+            });
+          });
+    
+          try {
+            const loadedUrls = await Promise.all(promises);
+            // setLoadedImages(loadedUrls);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+    
+        preloadImages();
+      }, [urls]);
 
     useEffect(()=> {
         const func = async () => {

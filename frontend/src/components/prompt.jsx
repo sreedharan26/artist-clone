@@ -6,6 +6,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Prompt(){
     const [data, setDataArray] = useState(null)
+    const [urls, setUrls] = useState([])
     const [index, setIndex] = useState(random([], 10))
     const [base64, setBase64] = useState('')
     const [image, setImage] = useState('')
@@ -18,6 +19,7 @@ export default function Prompt(){
             const res = await axios.get('https://nextjsbackend-rouge.vercel.app/api/prompts')
 
             let newData = []
+            const newUrls = []
             for(const obj of res.data){
                 // console.log(obj)
                 const newObj = {
@@ -26,15 +28,39 @@ export default function Prompt(){
                     image: obj.fields?.["image"],
                 }
                 newData && newData.push(newObj)
+                newUrls && newObj.image !== undefined && newUrls.push(newObj && newObj.image !== undefined && newObj.image[0] && newObj.image[0]?.url)
             }
             newData = newData.filter(x => x && x.image!== undefined)
             // console.log(newData)
+            setUrls(newUrls)
             setDataArray(newData)
 
         }catch(e){
             console.log(e);
         }
     }
+
+    useEffect(() => {
+        const preloadImages = async () => {
+          const promises = urls.map(url => {
+            return new Promise((resolve, reject) => {
+              const image = new Image();
+              image.src = url;
+              image.onload = () => resolve(url);
+              image.onerror = () => reject(new Error(`Failed to load image: ${url}`));
+            });
+          });
+    
+          try {
+            const loadedUrls = await Promise.all(promises);
+            // setLoadedImages(loadedUrls);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+    
+        preloadImages();
+      }, [urls]);
 
     useEffect(()=> {
         const func = async () => {
