@@ -13,6 +13,7 @@ const getPrompts = require('./operations/prompts')
 const getImagesData = require('./operations/imageData')
 const getArtistsData = require('./operations/artistPersonality')
 const getArtists = require('./operations/artistByname')
+const gptimages = require('./operations/gptImages')
 
 app.use(cors())
 app.use(compression({
@@ -132,5 +133,21 @@ app.get('/genImages', async (req, res) => {
     }
 })
 
+app.get('/gptImages', async (req, res) => {
+    console.log('started')
+    try{
+        const data = await gptimages("Cosmic Dance of Colors")
+        console.log("end")
+        if(typeof data !== 'error')
+            res.json(data)
+        else    
+            throw data
+    }
+    catch(e){
+        console.log(e.message)
+        res.status(500).send("error", e.message)
+    }
+})
 
-app.listen(3000, () => console.log("Server listening on port 3000"))
+
+app.listen(3001, () => console.log("Server listening on port 3001"))
